@@ -9,5 +9,5 @@ urlpatterns = [
     path('transactions/', views.PointTransactionListCreateView.as_view(), name='transaction-list-create'),
     path('transactions/<int:pk>/', views.PointTransactionDetailView.as_view(), name='transaction-detail'),
     path('extern/members/', views.member_sync, name='member-sync'),
-    path('nfc/lookup/<str:uid>/', views.nfc_lookup, name='nfc-lookup'),
+    path('nfc/lookup/<str:uid>/', views.nfc_lookup, name='nfc-lookup'),  # ← 追加分を残す
 ]
