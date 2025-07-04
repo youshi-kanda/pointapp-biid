@@ -33,10 +33,15 @@ class PointTransactionSerializer(serializers.ModelSerializer):
 
 
 class MemberSyncSerializer(serializers.Serializer):
+    member_id = serializers.CharField(max_length=50)
     username = serializers.CharField(max_length=150)
     email = serializers.EmailField()
-    member_id = serializers.CharField(max_length=50)
+    first_name = serializers.CharField(max_length=30, required=False, allow_blank=True)
+    last_name = serializers.CharField(max_length=150, required=False, allow_blank=True)
     points = serializers.IntegerField(default=0)
-    status = serializers.ChoiceField(choices=[('active', 'Active'), ('inactive', 'Inactive')], default='active')
+    status = serializers.ChoiceField(
+        choices=[('active', 'Active'), ('inactive', 'Inactive'), ('suspended', 'Suspended')],
+        default='active'
+    )
     location = serializers.CharField(max_length=255, required=False, allow_blank=True)
     avatar = serializers.URLField(required=False, allow_blank=True)
