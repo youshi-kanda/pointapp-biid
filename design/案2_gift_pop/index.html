@@ -4,190 +4,292 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIID Store - Gift Pop Style</title>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=M+PLUS+Rounded+1c:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50 min-h-screen overflow-x-hidden">
-    
-    <!-- Gift Box Header -->
-    <header class="relative bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-400 overflow-hidden">
-        <!-- Subtle Gift Elements -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="gentle-float" style="top: 20%; left: 15%; animation-delay: 0s;">🎁</div>
-            <div class="gentle-float" style="top: 70%; right: 20%; animation-delay: 2s;">✨</div>
-        </div>
-        
-        <div class="relative container mx-auto px-4 py-8">
-            <div class="flex items-center justify-between">
-                <!-- Logo with Gift Box -->
-                <div class="flex items-center space-x-4">
-                    <div class="relative">
-                        <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-lg soft-glow">
-                            <span class="text-2xl">🎁</span>
-                        </div>
-                        <div class="absolute -top-1 -right-1 w-6 h-6 bg-yellow-300 rounded-full flex items-center justify-center">
-                            <span class="text-xs">✨</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h1 class="text-3xl font-baloo text-white drop-shadow-lg">biid</h1>
-                        <p class="text-white opacity-90 text-sm font-mplus font-medium">Gift & Point Connect</p>
-                    </div>
+<body>
+    <header class="header-professional">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i class="fas fa-gift"></i>
                 </div>
-                
-                <!-- User Gift Card -->
-                <div class="hidden md:flex items-center space-x-4">
-                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-3xl px-6 py-4 border-2 border-white border-opacity-30 gift-card-hover">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-12 h-12 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full flex items-center justify-center relative">
-                                <span class="text-white font-bold text-lg">田</span>
-                                <div class="absolute -top-1 -right-1 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
-                                    <span class="text-xs">👑</span>
-                                </div>
-                            </div>
-                            <div>
-                                <p class="text-white font-bold text-lg font-mplus">田中太郎さん</p>
-                                <p class="text-white text-opacity-80 text-sm">VIP Member ✨</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Points Gift Box -->
-                    <div class="relative">
-                        <div class="bg-gradient-to-br from-yellow-300 to-orange-300 rounded-2xl px-6 py-3 shadow-lg border-2 border-white">
-                            <div class="flex items-center space-x-2">
-                                <div class="text-xl">💰</div>
-                                <div>
-                                    <p class="text-white font-bold text-xl font-baloo">15,420</p>
-                                    <p class="text-white text-opacity-90 text-sm font-medium">ポイント</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="absolute -top-3 -right-3 w-8 h-8 bg-pink-400 rounded-full flex items-center justify-center animate-pulse">
-                            <span class="text-white text-sm">🎉</span>
-                        </div>
-                    </div>
+                <div class="logo-text">
+                    <h1>biid GiftConnect</h1>
                 </div>
-                
-                <!-- Mobile Menu -->
-                <button class="md:hidden bg-white bg-opacity-20 backdrop-blur-lg rounded-full p-4 border-2 border-white border-opacity-30">
-                    <i class="fas fa-bars text-white text-xl"></i>
-                </button>
             </div>
-        </div>
-        
-        <!-- Gift Ribbon Bottom -->
-        <div class="absolute bottom-0 left-0 right-0">
-            <svg viewBox="0 0 1200 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-10">
-                <path d="M0 120L50 100C100 80 200 40 300 20C400 0 500 0 600 10C700 20 800 40 900 50C1000 60 1100 60 1150 60L1200 60V120H1150C1100 120 1000 120 900 120C800 120 700 120 600 120C500 120 400 120 300 120C200 120 100 120 50 120H0Z" fill="white"/>
-            </svg>
+            
+            <div class="header-actions">
+                <div class="search-toggle">
+                    <span>店舗検索</span>
+                </div>
+                <div class="favorites">
+                    <i class="far fa-heart"></i>
+                    <span>お気に入り</span>
+                </div>
+                <div class="history">
+                    <i class="fas fa-history"></i>
+                    <span>履歴</span>
+                </div>
+                <div class="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>設定</span>
+                </div>
+            </div>
+            
+            <div class="user-section">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name">田中花子</span>
+                        <span class="user-id">会員ID: GP2024 | 東京都新宿区</span>
+                    </div>
+                </div>
+                <div class="points-display">
+                    <i class="fas fa-coins"></i>
+                    <span class="points-value">15,420 pt</span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Gift Hunt Search Panel -->
-    <section class="container mx-auto px-4 -mt-6 relative z-10">
-        <div class="bg-white rounded-3xl shadow-2xl border-4 border-purple-200 p-8 mb-8 gift-search-panel">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-baloo text-purple-600 mb-3 gift-title-bounce">
-                    🎁 ギフト＆ポイントハント 🎁
-                </h2>
-                <p class="text-purple-500 text-lg font-mplus font-medium">素敵なプレゼントとお得なポイントを見つけよう！</p>
+    <main class="main-content">
+        <aside class="sidebar gift-theme" id="sidebar">
+            <div class="sidebar-header">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h3><i class="fas fa-filter"></i> 検索条件</h3>
             </div>
             
-            <!-- Location Hunt -->
-            <div class="mb-8">
-                <div class="flex items-center justify-center space-x-4 mb-6">
-                    <button class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full py-4 px-10 font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300 flex items-center space-x-3 gift-btn-bounce">
-                        <span class="text-2xl">📍</span>
-                        <span class="font-mplus">現在地でギフトハント開始！</span>
-                        <span class="text-2xl">🎯</span>
-                    </button>
+            <div class="sidebar-content">
+                <button class="location-btn">
+                    <i class="fas fa-location-arrow"></i>
+                    現在地を取得
+                </button>
+                
+                <div class="filter-section">
+                    <h4>検索範囲</h4>
+                    <div class="range-buttons">
+                        <button class="range-btn">500m</button>
+                        <button class="range-btn">1km</button>
+                        <button class="range-btn active">3km</button>
+                        <button class="range-btn">5km</button>
+                    </div>
                 </div>
                 
-                <!-- Distance Gift Boxes -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <button class="bg-gradient-to-br from-red-200 to-pink-200 hover:from-red-300 hover:to-pink-300 text-red-800 rounded-2xl py-4 px-3 font-bold transition-all duration-300 border-3 border-red-300 relative gift-distance-btn transform hover:scale-105">
-                        <div class="text-2xl mb-2">🎁</div>
-                        <div class="font-mplus">500m</div>
-                        <div class="text-sm opacity-80">近場ギフト</div>
-                    </button>
-                    <button class="bg-gradient-to-br from-orange-200 to-yellow-200 hover:from-orange-300 hover:to-yellow-300 text-orange-800 rounded-2xl py-4 px-3 font-bold transition-all duration-300 border-3 border-orange-300 relative gift-distance-btn transform hover:scale-105">
-                        <div class="text-2xl mb-2">🎀</div>
-                        <div class="font-mplus">1km</div>
-                        <div class="text-sm opacity-80">お散歩ギフト</div>
-                    </button>
-                    <button class="bg-gradient-to-br from-green-200 to-emerald-200 hover:from-green-300 hover:to-emerald-300 text-green-800 rounded-2xl py-4 px-3 font-bold transition-all duration-300 border-3 border-green-300 relative gift-distance-btn transform hover:scale-105">
-                        <div class="text-2xl mb-2">💝</div>
-                        <div class="font-mplus">3km</div>
-                        <div class="text-sm opacity-80">冒険ギフト</div>
-                    </button>
-                    <button class="bg-gradient-to-br from-purple-200 to-indigo-200 hover:from-purple-300 hover:to-indigo-300 text-purple-800 rounded-2xl py-4 px-3 font-bold transition-all duration-300 border-3 border-purple-300 relative gift-distance-btn transform hover:scale-105">
-                        <div class="text-2xl mb-2">🌟</div>
-                        <div class="font-mplus">5km</div>
-                        <div class="text-sm opacity-80">遠征ギフト</div>
-                    </button>
+                <div class="filter-section">
+                    <h4>現在地:</h4>
+                    <p class="current-location">東京都新宿区西新宿1-1-1</p>
+                    <p class="search-range">検索範囲: 半径3km以内</p>
                 </div>
-            </div>
-            
-            <!-- Category Gift Boxes -->
-            <div>
-                <label class="block text-purple-700 font-bold text-xl mb-4 text-center font-baloo">🎪 カテゴリーを選んでね 🎪</label>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <button class="bg-gradient-to-br from-red-100 to-pink-100 hover:from-red-200 hover:to-pink-200 text-red-700 rounded-3xl py-6 px-4 font-bold transition-all duration-300 border-3 border-red-200 flex flex-col items-center space-y-2 gift-category-btn transform hover:scale-105 hover:rotate-2">
-                        <span class="text-4xl">🍽️</span>
-                        <span class="font-mplus text-lg">レストラン</span>
-                        <span class="text-xs opacity-70">美味しいギフト</span>
-                    </button>
-                    <button class="bg-gradient-to-br from-blue-100 to-cyan-100 hover:from-blue-200 hover:to-cyan-200 text-blue-700 rounded-3xl py-6 px-4 font-bold transition-all duration-300 border-3 border-blue-200 flex flex-col items-center space-y-2 gift-category-btn transform hover:scale-105 hover:rotate-2">
-                        <span class="text-4xl">🛍️</span>
-                        <span class="font-mplus text-lg">ショッピング</span>
-                        <span class="text-xs opacity-70">お買い物ギフト</span>
-                    </button>
-                    <button class="bg-gradient-to-br from-amber-100 to-yellow-100 hover:from-amber-200 hover:to-yellow-200 text-amber-700 rounded-3xl py-6 px-4 font-bold transition-all duration-300 border-3 border-amber-200 flex flex-col items-center space-y-2 gift-category-btn transform hover:scale-105 hover:rotate-2">
-                        <span class="text-4xl">☕</span>
-                        <span class="font-mplus text-lg">カフェ</span>
-                        <span class="text-xs opacity-70">癒しギフト</span>
-                    </button>
-                    <button class="bg-gradient-to-br from-purple-100 to-pink-100 hover:from-purple-200 hover:to-pink-200 text-purple-700 rounded-3xl py-6 px-4 font-bold transition-all duration-300 border-3 border-purple-200 flex flex-col items-center space-y-2 gift-category-btn transform hover:scale-105 hover:rotate-2">
-                        <span class="text-4xl">🎁</span>
-                        <span class="font-mplus text-lg">ギフト</span>
-                        <span class="text-xs opacity-70">特別ギフト</span>
-                    </button>
+                
+                <div class="filter-section">
+                    <h4>カテゴリー</h4>
+                    <div class="category-list">
+                        <label class="category-item">
+                            <input type="checkbox" checked>
+                            <i class="fas fa-utensils"></i> レストラン・飲食店
+                        </label>
+                        <label class="category-item">
+                            <input type="checkbox">
+                            <i class="fas fa-shopping-bag"></i> 小売・ショッピング
+                        </label>
+                        <label class="category-item">
+                            <input type="checkbox">
+                            <i class="fas fa-spa"></i> サービス・美容
+                        </label>
+                        <label class="category-item">
+                            <input type="checkbox">
+                            <i class="fas fa-gamepad"></i> エンターテイメント
+                        </label>
+                        <label class="category-item">
+                            <input type="checkbox">
+                            <i class="fas fa-medkit"></i> 医療・健康
+                        </label>
+                        <label class="category-item">
+                            <input type="checkbox">
+                            <i class="fas fa-graduation-cap"></i> 教育・学習
+                        </label>
+                    </div>
                 </div>
+                
+                <div class="filter-section">
+                    <h4>評価</h4>
+                    <select class="filter-select">
+                        <option>指定なし</option>
+                        <option>4.0以上</option>
+                        <option>3.5以上</option>
+                        <option>3.0以上</option>
+                    </select>
+                </div>
+                
+                <div class="filter-section">
+                    <h4>営業状況</h4>
+                    <select class="filter-select">
+                        <option>すべて</option>
+                        <option>営業中</option>
+                        <option>24時間営業</option>
+                    </select>
+                </div>
+                
+                <div class="filter-section">
+                    <h4>価格帯</h4>
+                    <select class="filter-select">
+                        <option>指定なし</option>
+                        <option>¥ (リーズナブル)</option>
+                        <option>¥¥ (普通)</option>
+                        <option>¥¥¥ (高級)</option>
+                    </select>
+                </div>
+                
+                <div class="filter-section">
+                    <h4>アクセシビリティ</h4>
+                    <div class="accessibility-options">
+                        <label class="accessibility-item">
+                            <input type="checkbox">
+                            <span>車椅子対応</span>
+                        </label>
+                        <label class="accessibility-item">
+                            <input type="checkbox">
+                            <span>駐車場あり</span>
+                        </label>
+                        <label class="accessibility-item">
+                            <input type="checkbox">
+                            <span>禁煙</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <button class="apply-filters-btn">
+                    <i class="fas fa-search"></i> 検索実行
+                </button>
             </div>
-        </div>
-    </section>
+        </aside>
 
-    <!-- Gift Map Treasure -->
-    <section class="container mx-auto px-4 mb-8">
-        <div class="bg-white rounded-3xl shadow-2xl border-4 border-purple-200 overflow-hidden gift-map-container">
-            <div class="bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-400 p-6">
-                <h3 class="text-white font-baloo text-2xl text-center flex items-center justify-center space-x-3">
-                    <span class="text-3xl animate-bounce">🗺️</span>
-                    <span>ギフトトレジャーマップ</span>
-                    <span class="text-3xl animate-bounce" style="animation-delay: 0.5s">💎</span>
-                </h3>
-            </div>
-            <div id="map" class="h-96 relative">
-                <!-- Map Loading State -->
-                <div class="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50 flex items-center justify-center">
-                    <div class="text-center">
-                        <div class="mb-6">
-                            <div class="text-8xl animate-bounce">🎁</div>
+        <div class="content-area">
+            <section class="map-section">
+                <div id="map" class="gift-map"></div>
+            </section>
+
+            <section class="store-list-section">
+                <h2 class="store-list-title"><i class="fas fa-store"></i> 店舗一覧</h2>
+                
+                <div class="store-list">
+                    <div class="store-card gift-card">
+                        <div class="store-icon">
+                            <i class="fas fa-cut"></i>
                         </div>
-                        <p class="text-purple-600 font-bold text-xl font-baloo mb-4">ギフトマップを読み込み中...</p>
-                        <div class="flex justify-center space-x-2">
-                            <div class="w-4 h-4 bg-purple-400 rounded-full animate-bounce"></div>
-                            <div class="w-4 h-4 bg-pink-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
-                            <div class="w-4 h-4 bg-yellow-400 rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
+                        <div class="store-info">
+                            <div class="store-header">
+                                <h3 class="store-name">ビューティーサロン麗</h3>
+                                <div class="store-category">サービス・美容</div>
+                            </div>
+                            <div class="store-details">
+                                <div class="rating-distance">
+                                    <div class="rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="rating-text">4.8 (89件)</span>
+                                    </div>
+                                    <div class="distance">0.6km</div>
+                                </div>
+                                <div class="operating-status open">営業中</div>
+                                <div class="address">東京都新宿区西新宿1-6-7</div>
+                                <div class="points-info">
+                                    <span class="points-earned">獲得ポイント: 480pt (還元率: 8%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="store-actions">
+                            <button class="detail-btn">詳細を見る</button>
+                            <button class="map-btn">地図で確認</button>
+                        </div>
+                    </div>
+                    
+                    <div class="store-card gift-card">
+                        <div class="store-icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <div class="store-info">
+                            <div class="store-header">
+                                <h3 class="store-name">カフェ・ドルチェ</h3>
+                                <div class="store-category">レストラン・飲食店</div>
+                            </div>
+                            <div class="store-details">
+                                <div class="rating-distance">
+                                    <div class="rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <span class="rating-text">4.6 (124件)</span>
+                                    </div>
+                                    <div class="distance">0.8km</div>
+                                </div>
+                                <div class="operating-status open">営業中</div>
+                                <div class="address">東京都新宿区西新宿2-3-4</div>
+                                <div class="points-info">
+                                    <span class="points-earned">獲得ポイント: 320pt (還元率: 5%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="store-actions">
+                            <button class="detail-btn">詳細を見る</button>
+                            <button class="map-btn">地図で確認</button>
+                        </div>
+                    </div>
+                    
+                    <div class="store-card gift-card">
+                        <div class="store-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="store-info">
+                            <div class="store-header">
+                                <h3 class="store-name">ファッション館NOVA</h3>
+                                <div class="store-category">小売・ショッピング</div>
+                            </div>
+                            <div class="store-details">
+                                <div class="rating-distance">
+                                    <div class="rating">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <span class="rating-text">4.3 (67件)</span>
+                                    </div>
+                                    <div class="distance">1.2km</div>
+                                </div>
+                                <div class="operating-status open">営業中</div>
+                                <div class="address">東京都新宿区西新宿3-5-8</div>
+                                <div class="points-info">
+                                    <span class="points-earned">獲得ポイント: 600pt (還元率: 10%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="store-actions">
+                            <button class="detail-btn">詳細を見る</button>
+                            <button class="map-btn">地図で確認</button>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
-    </section>
+    </main>
 
     <!-- Gift Store Collection -->
     <section class="container mx-auto px-4 pb-28">
