@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIID Store - Lavender Fantasy Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'lavender': {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7c3aed',
+                            800: '#6b21a8',
+                            900: '#581c87'
+                        },
+                        'fantasy-blue': {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+                        },
+                        'dream-pink': {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843'
+                        }
+                    },
+                    fontFamily: {
+                        'pacifico': ['Pacifico', 'cursive'],
+                        'opensans': ['Open Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-opensans bg-gradient-to-br from-lavender-50 via-fantasy-blue-50 to-dream-pink-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md shadow-2xl border-b border-lavender-200">
+        <div class="container mx-auto px-4 py-5">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-lavender-400 via-fantasy-blue-400 to-dream-pink-400 rounded-full flex items-center justify-center shadow-2xl transform hover:scale-110 hover:rotate-6 transition-all duration-500 lavender-glow">
+                        <span class="text-white font-bold text-xl font-pacifico">B</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-pacifico bg-gradient-to-r from-lavender-600 via-fantasy-blue-600 to-dream-pink-600 bg-clip-text text-transparent">
+                            biid StoreConnect
+                        </h1>
+                        <p class="text-sm text-gray-600 font-opensans">夢のようなポイント体験 ✨</p>
+                    </div>
+                </div>
+
+                <!-- User Info -->
+                <div class="flex items-center space-x-4">
+                    <div class="text-right">
+                        <p class="font-semibold text-gray-800 font-opensans">田中 太郎さん 🌙</p>
+                        <p class="text-sm text-lavender-600 font-medium">15,420 pt</p>
+                    </div>
+                    <div class="w-12 h-12 bg-gradient-to-br from-lavender-400 to-dream-pink-400 rounded-full flex items-center justify-center lavender-pulse">
+                        <span class="text-white font-bold font-opensans">田</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Search Section -->
+        <div class="lavender-card mb-8">
+            <h2 class="text-2xl font-pacifico text-lavender-700 mb-6 flex items-center">
+                <span class="mr-3 text-3xl lavender-float">🔮</span>
+                魔法のお店探し
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Location -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-3 font-opensans flex items-center">
+                        <span class="mr-2">📍</span>
+                        現在地
+                    </label>
+                    <div class="lavender-input-group">
+                        <input type="text" value="東京都新宿区西新宿1-1-1" class="lavender-input" readonly>
+                        <button class="lavender-btn-primary">
+                            🌟 位置取得
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Search Range -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-3 font-opensans flex items-center">
+                        <span class="mr-2">🎯</span>
+                        検索範囲
+                    </label>
+                    <div class="flex space-x-3">
+                        <button class="lavender-btn-secondary">500m</button>
+                        <button class="lavender-btn-secondary">1km</button>
+                        <button class="lavender-btn-primary">3km</button>
+                        <button class="lavender-btn-secondary">5km</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="mt-8">
+                <label class="block text-sm font-medium text-gray-700 mb-4 font-opensans flex items-center">
+                    <span class="mr-2">🏷️</span>
+                    カテゴリフィルター
+                </label>
+                <div class="flex flex-wrap gap-3">
+                    <button class="lavender-category-tag active">🍽️ レストラン</button>
+                    <button class="lavender-category-tag">🛍️ ショッピング</button>
+                    <button class="lavender-category-tag">💄 美容・健康</button>
+                    <button class="lavender-category-tag">🎮 エンタメ</button>
+                    <button class="lavender-category-tag">🏥 医療・健康</button>
+                    <button class="lavender-category-tag">📚 教育・学習</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="lavender-card mb-8">
+            <h3 class="text-xl font-pacifico text-lavender-700 mb-6 flex items-center">
+                <span class="mr-3 text-2xl lavender-float">🗺️</span>
+                近くのbiid加盟店
+                <span class="ml-3 px-4 py-2 bg-gradient-to-r from-lavender-200 to-fantasy-blue-200 text-lavender-800 rounded-full text-sm font-medium font-opensans lavender-shimmer">
+                    12件発見
+                </span>
+            </h3>
+            <div class="relative h-72 bg-gradient-to-br from-lavender-100 via-fantasy-blue-100 to-dream-pink-100 rounded-3xl overflow-hidden border border-lavender-200 lavender-glow-soft">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-7xl mb-3 lavender-float">🗺️</div>
+                        <p class="text-lavender-600 font-medium font-pacifico text-lg">ファンタジーマップ</p>
+                        <p class="text-sm text-gray-500 font-opensans">ラベンダー色のマーカーで店舗表示</p>
+                    </div>
+                </div>
+                <!-- Sample markers with dreamy style -->
+                <div class="absolute top-8 left-12 w-10 h-10 bg-gradient-to-br from-lavender-400 to-lavender-600 rounded-full shadow-2xl lavender-drift flex items-center justify-center">
+                    <span class="text-white text-sm">🍰</span>
+                </div>
+                <div class="absolute top-20 right-20 w-10 h-10 bg-gradient-to-br from-fantasy-blue-400 to-fantasy-blue-600 rounded-full shadow-2xl lavender-drift flex items-center justify-center" style="animation-delay: 0.7s;">
+                    <span class="text-white text-sm">👗</span>
+                </div>
+                <div class="absolute bottom-16 left-24 w-10 h-10 bg-gradient-to-br from-dream-pink-400 to-dream-pink-600 rounded-full shadow-2xl lavender-drift flex items-center justify-center" style="animation-delay: 1.4s;">
+                    <span class="text-white text-sm">💅</span>
+                </div>
+                <!-- Magical decorative elements -->
+                <div class="absolute top-4 right-8 text-3xl lavender-twinkle">✨</div>
+                <div class="absolute bottom-8 right-12 text-3xl lavender-twinkle" style="animation-delay: 2s;">🌟</div>
+                <div class="absolute top-1/2 left-4 text-2xl lavender-twinkle" style="animation-delay: 3s;">💫</div>
+            </div>
+        </div>
+
+        <!-- Store List -->
+        <div class="lavender-card">
+            <h3 class="text-xl font-pacifico text-lavender-700 mb-8 flex items-center">
+                <span class="mr-3 text-2xl lavender-float">🏪</span>
+                おすすめ店舗リスト
+            </h3>
+            
+            <div class="space-y-6">
+                <!-- Store Item 1 -->
+                <div class="lavender-store-card">
+                    <div class="flex items-start space-x-5">
+                        <div class="w-18 h-18 bg-gradient-to-br from-lavender-400 via-fantasy-blue-400 to-dream-pink-400 rounded-3xl flex items-center justify-center text-3xl shadow-2xl lavender-pulse">
+                            🍰
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-pacifico text-lavender-700 mb-1">カフェ・ドルチェ</h4>
+                            <p class="text-sm text-gray-600 mb-3 font-opensans">🍽️ レストラン・飲食店 ￥￥</p>
+                            <div class="flex items-center space-x-5 text-sm mb-3">
+                                <span class="flex items-center text-fantasy-blue-600 font-medium">
+                                    ⭐ 4.6 <span class="ml-1 text-gray-500">(324件のレビュー)</span>
+                                </span>
+                                <span class="text-gray-500">📍 0.8km</span>
+                                <span class="text-green-600 font-medium">🟢 営業中</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="px-3 py-2 bg-gradient-to-r from-lavender-100 to-lavender-200 text-lavender-700 rounded-full text-xs font-medium font-opensans">
+                                    💎 150pt (5%還元)
+                                </span>
+                                <span class="px-3 py-2 bg-gradient-to-r from-fantasy-blue-100 to-fantasy-blue-200 text-fantasy-blue-700 rounded-full text-xs font-medium font-opensans">
+                                    🎁 特典あり
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col space-y-3">
+                            <button class="lavender-btn-primary text-sm px-5 py-2">詳細を見る</button>
+                            <button class="lavender-btn-secondary text-sm px-5 py-2">地図で確認</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Store Item 2 -->
+                <div class="lavender-store-card">
+                    <div class="flex items-start space-x-5">
+                        <div class="w-18 h-18 bg-gradient-to-br from-fantasy-blue-400 via-dream-pink-400 to-lavender-400 rounded-3xl flex items-center justify-center text-3xl shadow-2xl lavender-pulse" style="animation-delay: 0.5s;">
+                            👗
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-pacifico text-lavender-700 mb-1">ファッション館NOVA</h4>
+                            <p class="text-sm text-gray-600 mb-3 font-opensans">🛍️ 小売・ショッピング ￥￥</p>
+                            <div class="flex items-center space-x-5 text-sm mb-3">
+                                <span class="flex items-center text-fantasy-blue-600 font-medium">
+                                    ⭐ 4.3 <span class="ml-1 text-gray-500">(156件のレビュー)</span>
+                                </span>
+                                <span class="text-gray-500">📍 1.2km</span>
+                                <span class="text-green-600 font-medium">🟢 営業中</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="px-3 py-2 bg-gradient-to-r from-lavender-100 to-lavender-200 text-lavender-700 rounded-full text-xs font-medium font-opensans">
+                                    💎 320pt (3%還元)
+                                </span>
+                                <span class="px-3 py-2 bg-gradient-to-r from-dream-pink-100 to-dream-pink-200 text-dream-pink-700 rounded-full text-xs font-medium font-opensans">
+                                    🔥 人気店
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col space-y-3">
+                            <button class="lavender-btn-primary text-sm px-5 py-2">詳細を見る</button>
+                            <button class="lavender-btn-secondary text-sm px-5 py-2">地図で確認</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Store Item 3 -->
+                <div class="lavender-store-card">
+                    <div class="flex items-start space-x-5">
+                        <div class="w-18 h-18 bg-gradient-to-br from-dream-pink-400 via-lavender-400 to-fantasy-blue-400 rounded-3xl flex items-center justify-center text-3xl shadow-2xl lavender-pulse" style="animation-delay: 1s;">
+                            💅
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-pacifico text-lavender-700 mb-1">ビューティーサロン麗</h4>
+                            <p class="text-sm text-gray-600 mb-3 font-opensans">💄 サービス・美容 ￥￥￥</p>
+                            <div class="flex items-center space-x-5 text-sm mb-3">
+                                <span class="flex items-center text-fantasy-blue-600 font-medium">
+                                    ⭐ 4.8 <span class="ml-1 text-gray-500">(89件のレビュー)</span>
+                                </span>
+                                <span class="text-gray-500">📍 0.6km</span>
+                                <span class="text-green-600 font-medium">🟢 営業中</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="px-3 py-2 bg-gradient-to-r from-lavender-100 to-lavender-200 text-lavender-700 rounded-full text-xs font-medium font-opensans">
+                                    💎 480pt (8%還元)
+                                </span>
+                                <span class="px-3 py-2 bg-gradient-to-r from-fantasy-blue-100 to-fantasy-blue-200 text-fantasy-blue-700 rounded-full text-xs font-medium font-opensans">
+                                    ⭐ 高評価
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col space-y-3">
+                            <button class="lavender-btn-primary text-sm px-5 py-2">詳細を見る</button>
+                            <button class="lavender-btn-secondary text-sm px-5 py-2">地図で確認</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Navigation -->
+    <footer class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-lavender-200 shadow-2xl">
+        <div class="flex justify-around py-4">
+            <button class="lavender-nav-item active">
+                <span class="text-2xl">🏪</span>
+                <span class="text-xs font-opensans">店舗検索</span>
+            </button>
+            <button class="lavender-nav-item">
+                <span class="text-2xl">💜</span>
+                <span class="text-xs font-opensans">お気に入り</span>
+            </button>
+            <button class="lavender-nav-item">
+                <span class="text-2xl">📜</span>
+                <span class="text-xs font-opensans">履歴</span>
+            </button>
+            <button class="lavender-nav-item">
+                <span class="text-2xl">⚙️</span>
+                <span class="text-xs font-opensans">設定</span>
+            </button>
+        </div>
+    </footer>
+</body>
+</html>

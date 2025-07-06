@@ -1,0 +1,158 @@
+/* Girly Pop Style CSS */
+
+/* Custom Components */
+.girly-card {
+    @apply bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 border-2 border-girly-pink-100;
+    box-shadow: 0 20px 40px -10px rgba(214, 51, 132, 0.15), 0 10px 20px -5px rgba(214, 51, 132, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.girly-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px -10px rgba(214, 51, 132, 0.2), 0 15px 30px -5px rgba(214, 51, 132, 0.15);
+}
+
+.girly-store-card {
+    @apply bg-gradient-to-r from-white via-girly-pink-50 to-girly-gold-50 rounded-2xl p-4 border border-girly-pink-200;
+    box-shadow: 0 8px 25px -5px rgba(214, 51, 132, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.girly-store-card:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px -5px rgba(214, 51, 132, 0.2);
+    border-color: theme('colors.girly-pink.300');
+}
+
+.girly-btn-primary {
+    @apply px-6 py-3 rounded-2xl font-semibold text-white shadow-lg transform transition-all duration-300 ease-in-out;
+    background: linear-gradient(135deg, theme('colors.girly-pink.400'), theme('colors.girly-pink.600'));
+    box-shadow: 0 8px 20px -5px rgba(214, 51, 132, 0.3);
+}
+
+.girly-btn-primary:hover {
+    transform: translateY(-2px) scale(1.05);
+    background: linear-gradient(135deg, theme('colors.girly-pink.500'), theme('colors.girly-pink.700'));
+    box-shadow: 0 12px 30px -5px rgba(214, 51, 132, 0.4);
+}
+
+.girly-btn-secondary {
+    @apply px-6 py-3 rounded-2xl font-semibold text-girly-pink-700 bg-white border-2 border-girly-pink-300 shadow-lg transform transition-all duration-300 ease-in-out;
+}
+
+.girly-btn-secondary:hover {
+    transform: translateY(-2px) scale(1.05);
+    @apply bg-girly-pink-50 border-girly-pink-400;
+    box-shadow: 0 12px 30px -5px rgba(214, 51, 132, 0.2);
+}
+
+.girly-input {
+    @apply w-full px-4 py-3 rounded-2xl border-2 border-girly-pink-200 focus:border-girly-pink-400 focus:ring-4 focus:ring-girly-pink-100 transition-all duration-200 bg-white/90 backdrop-blur-sm;
+    font-family: 'Roboto', sans-serif;
+}
+
+.girly-input-group {
+    @apply flex space-x-2;
+}
+
+.girly-nav-item {
+    @apply flex flex-col items-center space-y-1 px-4 py-2 rounded-2xl text-gray-600 transition-all duration-200;
+}
+
+.girly-nav-item:hover {
+    @apply bg-girly-pink-100 text-girly-pink-700;
+    transform: translateY(-2px);
+}
+
+.girly-nav-item.active {
+    @apply bg-gradient-to-r from-girly-pink-100 to-girly-gold-100 text-girly-pink-700;
+    box-shadow: 0 4px 15px -3px rgba(214, 51, 132, 0.2);
+}
+
+/* Custom Animations */
+@keyframes girly-bounce {
+    0%, 20%, 53%, 80%, 100% {
+        transform: translate3d(0,0,0);
+    }
+    40%, 43% {
+        transform: translate3d(0, -15px, 0);
+    }
+    70% {
+        transform: translate3d(0, -8px, 0);
+    }
+    90% {
+        transform: translate3d(0, -3px, 0);
+    }
+}
+
+.girly-bounce {
+    animation: girly-bounce 2s infinite;
+}
+
+/* Gradient Text Effects */
+.girly-gradient-text {
+    background: linear-gradient(135deg, theme('colors.girly-pink.600'), theme('colors.girly-gold.500'));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Floating Elements */
+.girly-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Sparkle Effect */
+.girly-sparkle::before {
+    content: '✨';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Heart Beat Animation */
+.girly-heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.1);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.1);
+    }
+    70% {
+        transform: scale(1);
+    }
+}

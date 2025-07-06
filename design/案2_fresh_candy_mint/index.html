@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIID Store - Fresh Candy Mint Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'mint': {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a'
+                        },
+                        'candy-yellow': {
+                            50: '#fefce8',
+                            100: '#fef9c3',
+                            200: '#fef08a',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207',
+                            800: '#854d0e',
+                            900: '#713f12'
+                        },
+                        'candy-orange': {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12'
+                        }
+                    },
+                    fontFamily: {
+                        'baloo': ['Baloo 2', 'cursive'],
+                        'poppins': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins bg-gradient-to-br from-mint-50 via-candy-yellow-50 to-candy-orange-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-sm shadow-xl border-b-4 border-mint-300">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-r from-mint-400 to-mint-600 rounded-full flex items-center justify-center shadow-xl transform hover:scale-110 hover:rotate-12 transition-all duration-300">
+                        <span class="text-white font-bold text-xl font-baloo">B</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-baloo font-bold bg-gradient-to-r from-mint-600 to-candy-yellow-500 bg-clip-text text-transparent">
+                            biid StoreConnect
+                        </h1>
+                        <p class="text-sm text-gray-600">フレッシュなポイントライフ 🌿</p>
+                    </div>
+                </div>
+
+                <!-- User Info -->
+                <div class="flex items-center space-x-4">
+                    <div class="text-right">
+                        <p class="font-semibold text-gray-800">田中 太郎さん 🌱</p>
+                        <p class="text-sm text-mint-600 font-medium">15,420 pt</p>
+                    </div>
+                    <div class="w-10 h-10 bg-gradient-to-r from-mint-400 to-candy-yellow-400 rounded-full flex items-center justify-center candy-bounce">
+                        <span class="text-white font-bold">田</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-6">
+        <!-- Search Section -->
+        <div class="mint-card mb-6">
+            <h2 class="text-2xl font-baloo font-bold text-mint-700 mb-4 flex items-center">
+                <span class="mr-2 text-3xl">🔍</span>
+                お店を見つけよう！
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Location -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2 font-poppins">📍 現在地</label>
+                    <div class="mint-input-group">
+                        <input type="text" value="東京都新宿区西新宿1-1-1" class="mint-input" readonly>
+                        <button class="mint-btn-primary">
+                            🎯 位置取得
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Search Range -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2 font-poppins">🎯 検索範囲</label>
+                    <div class="flex space-x-2">
+                        <button class="mint-btn-secondary">500m</button>
+                        <button class="mint-btn-secondary">1km</button>
+                        <button class="mint-btn-primary">3km</button>
+                        <button class="mint-btn-secondary">5km</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="mt-6">
+                <label class="block text-sm font-medium text-gray-700 mb-3 font-poppins">🏷️ カテゴリ</label>
+                <div class="flex flex-wrap gap-2">
+                    <button class="mint-category-tag active">🍽️ レストラン</button>
+                    <button class="mint-category-tag">🛍️ ショッピング</button>
+                    <button class="mint-category-tag">💄 美容・健康</button>
+                    <button class="mint-category-tag">🎮 エンタメ</button>
+                    <button class="mint-category-tag">🏥 医療</button>
+                    <button class="mint-category-tag">📚 教育</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="mint-card mb-6">
+            <h3 class="text-xl font-baloo font-bold text-mint-700 mb-4 flex items-center">
+                <span class="mr-2 text-2xl">🗺️</span>
+                近くのbiid加盟店 
+                <span class="ml-2 px-3 py-1 bg-candy-yellow-200 text-candy-yellow-800 rounded-full text-sm font-medium">12件</span>
+            </h3>
+            <div class="relative h-64 bg-gradient-to-br from-mint-100 via-candy-yellow-100 to-candy-orange-100 rounded-3xl overflow-hidden border-4 border-mint-200">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-6xl mb-2 candy-float">🗺️</div>
+                        <p class="text-mint-600 font-medium font-baloo">フレッシュマップ</p>
+                        <p class="text-sm text-gray-500 font-poppins">ミントグリーンマーカーで店舗表示</p>
+                    </div>
+                </div>
+                <!-- Sample markers with hand-drawn style -->
+                <div class="absolute top-6 left-10 w-8 h-8 bg-mint-500 rounded-full shadow-lg candy-wiggle flex items-center justify-center">
+                    <span class="text-white text-xs">🍰</span>
+                </div>
+                <div class="absolute top-16 right-16 w-8 h-8 bg-candy-yellow-500 rounded-full shadow-lg candy-wiggle flex items-center justify-center" style="animation-delay: 0.5s;">
+                    <span class="text-white text-xs">👗</span>
+                </div>
+                <div class="absolute bottom-12 left-20 w-8 h-8 bg-candy-orange-500 rounded-full shadow-lg candy-wiggle flex items-center justify-center" style="animation-delay: 1s;">
+                    <span class="text-white text-xs">💅</span>
+                </div>
+                <!-- Decorative elements -->
+                <div class="absolute top-2 right-4 text-2xl candy-sparkle">✨</div>
+                <div class="absolute bottom-4 right-8 text-2xl candy-sparkle" style="animation-delay: 1.5s;">🌟</div>
+            </div>
+        </div>
+
+        <!-- Store List -->
+        <div class="mint-card">
+            <h3 class="text-xl font-baloo font-bold text-mint-700 mb-6 flex items-center">
+                <span class="mr-2 text-2xl">🏪</span>
+                おすすめ店舗
+            </h3>
+            
+            <div class="space-y-4">
+                <!-- Store Item 1 -->
+                <div class="mint-store-card">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-gradient-to-r from-mint-400 to-candy-yellow-400 rounded-2xl flex items-center justify-center text-3xl shadow-xl candy-bounce">
+                            🍰
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-baloo font-bold text-mint-700">カフェ・ドルチェ</h4>
+                            <p class="text-sm text-gray-600 mb-2 font-poppins">🍽️ レストラン・飲食店 ￥￥</p>
+                            <div class="flex items-center space-x-4 text-sm">
+                                <span class="flex items-center text-candy-yellow-600 font-medium">
+                                    ⭐ 4.6 <span class="ml-1 text-gray-500">(324件)</span>
+                                </span>
+                                <span class="text-gray-500">📍 0.8km</span>
+                                <span class="text-green-600 font-medium">🟢 営業中</span>
+                            </div>
+                            <div class="mt-2 flex items-center space-x-2">
+                                <span class="px-2 py-1 bg-mint-100 text-mint-700 rounded-full text-xs font-medium">
+                                    💎 150pt (5%還元)
+                                </span>
+                                <span class="px-2 py-1 bg-candy-yellow-100 text-candy-yellow-700 rounded-full text-xs font-medium">
+                                    🎁 特典あり
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col space-y-2">
+                            <button class="mint-btn-primary text-sm px-4 py-2">詳細</button>
+                            <button class="mint-btn-secondary text-sm px-4 py-2">地図</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Store Item 2 -->
+                <div class="mint-store-card">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-gradient-to-r from-mint-400 to-candy-orange-400 rounded-2xl flex items-center justify-center text-3xl shadow-xl candy-bounce" style="animation-delay: 0.3s;">
+                            👗
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-baloo font-bold text-mint-700">ファッション館NOVA</h4>
+                            <p class="text-sm text-gray-600 mb-2 font-poppins">🛍️ 小売・ショッピング ￥￥</p>
+                            <div class="flex items-center space-x-4 text-sm">
+                                <span class="flex items-center text-candy-yellow-600 font-medium">
+                                    ⭐ 4.3 <span class="ml-1 text-gray-500">(156件)</span>
+                                </span>
+                                <span class="text-gray-500">📍 1.2km</span>
+                                <span class="text-green-600 font-medium">🟢 営業中</span>
+                            </div>
+                            <div class="mt-2 flex items-center space-x-2">
+                                <span class="px-2 py-1 bg-mint-100 text-mint-700 rounded-full text-xs font-medium">
+                                    💎 320pt (3%還元)
+                                </span>
+                                <span class="px-2 py-1 bg-candy-orange-100 text-candy-orange-700 rounded-full text-xs font-medium">
+                                    🔥 人気店
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col space-y-2">
+                            <button class="mint-btn-primary text-sm px-4 py-2">詳細</button>
+                            <button class="mint-btn-secondary text-sm px-4 py-2">地図</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Store Item 3 -->
+                <div class="mint-store-card">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-gradient-to-r from-candy-yellow-400 to-candy-orange-400 rounded-2xl flex items-center justify-center text-3xl shadow-xl candy-bounce" style="animation-delay: 0.6s;">
+                            💅
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-baloo font-bold text-mint-700">ビューティーサロン麗</h4>
+                            <p class="text-sm text-gray-600 mb-2 font-poppins">💄 サービス・美容 ￥￥￥</p>
+                            <div class="flex items-center space-x-4 text-sm">
+                                <span class="flex items-center text-candy-yellow-600 font-medium">
+                                    ⭐ 4.8 <span class="ml-1 text-gray-500">(89件)</span>
+                                </span>
+                                <span class="text-gray-500">📍 0.6km</span>
+                                <span class="text-green-600 font-medium">🟢 営業中</span>
+                            </div>
+                            <div class="mt-2 flex items-center space-x-2">
+                                <span class="px-2 py-1 bg-mint-100 text-mint-700 rounded-full text-xs font-medium">
+                                    💎 480pt (8%還元)
+                                </span>
+                                <span class="px-2 py-1 bg-candy-yellow-100 text-candy-yellow-700 rounded-full text-xs font-medium">
+                                    ⭐ 高評価
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col space-y-2">
+                            <button class="mint-btn-primary text-sm px-4 py-2">詳細</button>
+                            <button class="mint-btn-secondary text-sm px-4 py-2">地図</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Navigation -->
+    <footer class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t-4 border-mint-300 shadow-xl">
+        <div class="flex justify-around py-3">
+            <button class="mint-nav-item active">
+                <span class="text-2xl">🏪</span>
+                <span class="text-xs font-poppins">店舗検索</span>
+            </button>
+            <button class="mint-nav-item">
+                <span class="text-2xl">💚</span>
+                <span class="text-xs font-poppins">お気に入り</span>
+            </button>
+            <button class="mint-nav-item">
+                <span class="text-2xl">📜</span>
+                <span class="text-xs font-poppins">履歴</span>
+            </button>
+            <button class="mint-nav-item">
+                <span class="text-2xl">⚙️</span>
+                <span class="text-xs font-poppins">設定</span>
+            </button>
+        </div>
+    </footer>
+</body>
+</html>
