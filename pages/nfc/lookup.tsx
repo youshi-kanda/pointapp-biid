@@ -53,17 +53,22 @@ const NFCLookup: React.FC = () => {
 
   const lookupUser = async (uid: string) => {
     try {
-      const mockUser: NFCUser = {
-        id: Math.floor(Math.random() * 1000),
-        name: '田中太郎',
-        email: 'tanaka@example.com',
-        currentPoints: 1520,
-        memberSince: '2024-01-15',
-        uid: uid
-      };
-      
-      setFoundUser(mockUser);
-      setMessage({ type: 'success', text: 'ユーザーが見つかりました！' });
+      const response = await apiService.lookupUserByNFC(uid);
+      if (response.success && response.user) {
+        const user = response.user;
+        setFoundUser({
+          id: user.id,
+          name: `${user.first_name || ''} ${user.last_name || ''}`.trim() || user.username,
+          email: user.email,
+          currentPoints: user.points || 0,
+          memberSince: user.date_joined ? new Date(user.date_joined).toLocaleDateString('ja-JP') : 'Unknown',
+          uid: uid
+        });
+        setMessage({ type: 'success', text: 'ユーザーが見つかりました！' });
+      } else {
+        setMessage({ type: 'error', text: response.error || 'ユーザーが見つかりませんでした' });
+        setFoundUser(null);
+      }
     } catch (error) {
       setMessage({ type: 'error', text: 'ユーザーが見つかりませんでした' });
       setFoundUser(null);

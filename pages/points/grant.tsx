@@ -28,15 +28,21 @@ const GrantPoints: React.FC = () => {
 
     setIsLoading(true);
     try {
-      const mockUser = {
-        id: 1,
-        name: '田中太郎',
-        email: 'tanaka@example.com',
-        currentPoints: 1520,
-        memberSince: '2024-01-15'
-      };
-      setUserInfo(mockUser);
-      setMessage({ type: 'success', text: 'ユーザーが見つかりました' });
+      const response = await apiService.lookupUserByNFC(formData.uid);
+      if (response.success && response.user) {
+        const user = response.user;
+        setUserInfo({
+          id: user.id,
+          name: `${user.first_name || ''} ${user.last_name || ''}`.trim() || user.username,
+          email: user.email,
+          currentPoints: user.points || 0,
+          memberSince: user.date_joined ? new Date(user.date_joined).toLocaleDateString('ja-JP') : 'Unknown'
+        });
+        setMessage({ type: 'success', text: 'ユーザーが見つかりました' });
+      } else {
+        setMessage({ type: 'error', text: response.error || 'ユーザーが見つかりませんでした' });
+        setUserInfo(null);
+      }
     } catch (error) {
       setMessage({ type: 'error', text: 'ユーザーが見つかりませんでした' });
       setUserInfo(null);
@@ -61,11 +67,14 @@ const GrantPoints: React.FC = () => {
 
     setIsLoading(true);
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
-      
-      setMessage({ type: 'success', text: `${points}ポイントを付与しました！` });
-      setFormData({ uid: '', points: '', reason: '' });
-      setUserInfo(null);
+      const response = await apiService.grantPoints(formData.uid, points, formData.reason);
+      if (response.success) {
+        setMessage({ type: 'success', text: response.message || `${points}ポイントを付与しました！` });
+        setFormData({ uid: '', points: '', reason: '' });
+        setUserInfo(null);
+      } else {
+        setMessage({ type: 'error', text: response.error || 'ポイント付与に失敗しました' });
+      }
     } catch (error) {
       setMessage({ type: 'error', text: 'ポイント付与に失敗しました' });
     } finally {

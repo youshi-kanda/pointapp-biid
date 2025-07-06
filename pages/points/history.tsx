@@ -27,6 +27,22 @@ const PointsHistory: React.FC = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
+        const response = await apiService.getPointsHistory();
+        if (response.success && response.transactions) {
+          const formattedTransactions = response.transactions.map((t: any) => ({
+            id: t.id,
+            userId: t.user?.member_id || t.user?.username || 'Unknown',
+            userName: `${t.user?.first_name || ''} ${t.user?.last_name || ''}`.trim() || t.user?.username || 'Unknown User',
+            points: t.points_issued,
+            reason: t.description || 'ポイント付与',
+            timestamp: t.transaction_date,
+            type: t.points_issued > 0 ? 'grant' : 'redeem'
+          }));
+          setTransactions(formattedTransactions);
+          setFilteredTransactions(formattedTransactions);
+        }
+      } catch (error) {
+        console.error('Failed to fetch points history:', error);
         const mockData: PointTransaction[] = [
           {
             id: 1,
@@ -45,39 +61,10 @@ const PointsHistory: React.FC = () => {
             reason: 'イベント参加ボーナス',
             timestamp: '2025-01-06T09:15:00Z',
             type: 'grant'
-          },
-          {
-            id: 3,
-            userId: 'U003',
-            userName: '山田次郎',
-            points: -200,
-            reason: 'ポイント利用',
-            timestamp: '2025-01-06T08:45:00Z',
-            type: 'redeem'
-          },
-          {
-            id: 4,
-            userId: 'U001',
-            userName: '田中太郎',
-            points: 750,
-            reason: 'レビュー投稿特典',
-            timestamp: '2025-01-05T16:20:00Z',
-            type: 'grant'
-          },
-          {
-            id: 5,
-            userId: 'U004',
-            userName: '鈴木美咲',
-            points: 1000,
-            reason: '新規会員登録ボーナス',
-            timestamp: '2025-01-05T14:10:00Z',
-            type: 'grant'
           }
         ];
         setTransactions(mockData);
         setFilteredTransactions(mockData);
-      } catch (error) {
-        console.error('Failed to fetch points history:', error);
       } finally {
         setIsLoading(false);
       }

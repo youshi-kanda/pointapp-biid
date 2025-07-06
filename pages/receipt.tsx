@@ -22,6 +22,22 @@ const Receipt: React.FC = () => {
   useEffect(() => {
     const fetchChargeHistory = async () => {
       try {
+        const response = await apiService.getChargeHistory();
+        if (response.success && response.transactions) {
+          const formattedRecords = response.transactions.map((t: any) => ({
+            id: t.id,
+            amount: t.amount,
+            fee: Math.floor(t.amount * 0.036), // Calculate fee based on amount
+            total: t.amount + Math.floor(t.amount * 0.036),
+            paymentMethod: t.payment_method,
+            timestamp: t.transaction_date,
+            status: t.status,
+            transactionId: t.transaction_id
+          }));
+          setChargeHistory(formattedRecords);
+        }
+      } catch (error) {
+        console.error('Failed to fetch charge history:', error);
         const mockData: ChargeRecord[] = [
           {
             id: 1,
@@ -32,31 +48,9 @@ const Receipt: React.FC = () => {
             timestamp: '2025-01-06T10:30:00Z',
             status: 'completed',
             transactionId: 'TXN-20250106-001'
-          },
-          {
-            id: 2,
-            amount: 5000,
-            fee: 0,
-            total: 5000,
-            paymentMethod: 'bank_transfer',
-            timestamp: '2025-01-05T14:20:00Z',
-            status: 'completed',
-            transactionId: 'TXN-20250105-002'
-          },
-          {
-            id: 3,
-            amount: 20000,
-            fee: 500,
-            total: 20500,
-            paymentMethod: 'mobile_payment',
-            timestamp: '2025-01-04T09:15:00Z',
-            status: 'completed',
-            transactionId: 'TXN-20250104-003'
           }
         ];
         setChargeHistory(mockData);
-      } catch (error) {
-        console.error('Failed to fetch charge history:', error);
       } finally {
         setIsLoading(false);
       }

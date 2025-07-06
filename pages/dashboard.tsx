@@ -34,6 +34,19 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
+        const response = await apiService.getDashboardStats();
+        if (response.success) {
+          setStats({
+            totalUsers: response.stats.total_users,
+            totalPointsGranted: response.stats.total_points_granted,
+            totalRevenue: response.stats.total_revenue,
+            averageRating: response.stats.average_rating,
+            todayTransactions: response.stats.today_transactions,
+            monthlyGrowth: response.stats.monthly_growth
+          });
+        }
+      } catch (error) {
+        console.error('Failed to fetch dashboard stats:', error);
         const mockData: DashboardStats = {
           totalUsers: 1247,
           totalPointsGranted: 48500,
@@ -43,8 +56,6 @@ const Dashboard: React.FC = () => {
           monthlyGrowth: 12.5
         };
         setStats(mockData);
-      } catch (error) {
-        console.error('Failed to fetch dashboard stats:', error);
       } finally {
         setIsLoading(false);
       }

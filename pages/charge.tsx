@@ -77,13 +77,16 @@ const Charge: React.FC = () => {
 
     setIsLoading(true);
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate payment processing
-      
-      setMessage({ 
-        type: 'success', 
-        text: `¥${amount.toLocaleString()}のチャージが完了しました！` 
-      });
-      setFormData({ amount: '', paymentMethod: 'credit_card' });
+      const response = await apiService.chargePoints(amount, formData.paymentMethod);
+      if (response.success) {
+        setMessage({ 
+          type: 'success', 
+          text: response.message || `¥${amount.toLocaleString()}のチャージが完了しました！` 
+        });
+        setFormData({ amount: '', paymentMethod: 'credit_card' });
+      } else {
+        setMessage({ type: 'error', text: response.error || 'チャージに失敗しました。もう一度お試しください。' });
+      }
     } catch (error) {
       setMessage({ type: 'error', text: 'チャージに失敗しました。もう一度お試しください。' });
     } finally {
