@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>biid Store - Mobile First Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Mobile Header -->
+        <header class="mobile-header">
+            <div class="header-top">
+                <div class="user-section">
+                    <div class="user-avatar">田</div>
+                    <div class="user-info">
+                        <span class="user-name">田中太郎</span>
+                        <span class="member-id">MT2345</span>
+                    </div>
+                </div>
+                <div class="points-display">
+                    <span class="points-value">15,420</span>
+                    <span class="points-label">pt</span>
+                </div>
+            </div>
+            <div class="brand-section">
+                <h1 class="brand-title">biid StoreConnect</h1>
+                <p class="location-info">📍 東京都新宿区</p>
+            </div>
+        </header>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <button class="quick-btn location-btn">
+                <span class="btn-icon">📍</span>
+                <span class="btn-text">現在地</span>
+            </button>
+            <button class="quick-btn filter-btn">
+                <span class="btn-icon">🔍</span>
+                <span class="btn-text">絞り込み</span>
+            </button>
+            <button class="quick-btn favorites-btn">
+                <span class="btn-icon">💕</span>
+                <span class="btn-text">お気に入り</span>
+            </button>
+            <button class="quick-btn history-btn">
+                <span class="btn-icon">📋</span>
+                <span class="btn-text">履歴</span>
+            </button>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="map-header">
+                <h2 class="map-title">近くの店舗</h2>
+                <div class="map-info">
+                    <span class="radius-info">半径3km</span>
+                    <span class="store-count">12件</span>
+                </div>
+            </div>
+            <div id="map" class="map-container"></div>
+            <div class="map-controls">
+                <button class="map-control-btn zoom-in">+</button>
+                <button class="map-control-btn zoom-out">-</button>
+                <button class="map-control-btn current-location">📍</button>
+            </div>
+        </section>
+
+        <!-- Category Filter -->
+        <section class="category-filter">
+            <div class="category-scroll">
+                <button class="category-btn active">
+                    <span class="category-icon">🌟</span>
+                    <span class="category-name">すべて</span>
+                </button>
+                <button class="category-btn">
+                    <span class="category-icon">🍽️</span>
+                    <span class="category-name">グルメ</span>
+                </button>
+                <button class="category-btn">
+                    <span class="category-icon">🛍️</span>
+                    <span class="category-name">ショップ</span>
+                </button>
+                <button class="category-btn">
+                    <span class="category-icon">💅</span>
+                    <span class="category-name">美容</span>
+                </button>
+                <button class="category-btn">
+                    <span class="category-icon">🎭</span>
+                    <span class="category-name">エンタメ</span>
+                </button>
+                <button class="category-btn">
+                    <span class="category-icon">🏥</span>
+                    <span class="category-name">医療</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Store Cards -->
+        <section class="store-cards-section">
+            <div class="section-header">
+                <h2 class="section-title">店舗一覧</h2>
+                <button class="sort-btn">
+                    <span>距離順</span>
+                    <span class="sort-icon">⇅</span>
+                </button>
+            </div>
+            
+            <div class="store-cards-container">
+                <div class="store-card featured">
+                    <div class="card-header">
+                        <div class="store-badge">おすすめ</div>
+                        <button class="favorite-btn">💕</button>
+                    </div>
+                    <div class="store-main">
+                        <div class="store-icon beauty">💄</div>
+                        <div class="store-info">
+                            <h3 class="store-name">ビューティーサロン麗</h3>
+                            <div class="store-category beauty">サービス・美容</div>
+                            <div class="store-rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="rating-text">4.8 (89件)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="store-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">📍</span>
+                            <span class="detail-text">0.6km • 徒歩8分</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🕒</span>
+                            <span class="detail-text">営業中 • 21:00まで</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">💎</span>
+                            <span class="detail-text">8%還元 • 480pt獲得</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-btn primary">詳細を見る</button>
+                        <button class="action-btn secondary">ルート</button>
+                    </div>
+                </div>
+
+                <div class="store-card">
+                    <div class="card-header">
+                        <button class="favorite-btn">🤍</button>
+                    </div>
+                    <div class="store-main">
+                        <div class="store-icon shopping">🛍️</div>
+                        <div class="store-info">
+                            <h3 class="store-name">ファッション館NOVA</h3>
+                            <div class="store-category shopping">小売・ショッピング</div>
+                            <div class="store-rating">
+                                <span class="stars">⭐⭐⭐⭐</span>
+                                <span class="rating-text">4.3 (156件)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="store-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">📍</span>
+                            <span class="detail-text">1.2km • 徒歩15分</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🕒</span>
+                            <span class="detail-text">営業中 • 20:00まで</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">💎</span>
+                            <span class="detail-text">3%還元 • 320pt獲得</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-btn primary">詳細を見る</button>
+                        <button class="action-btn secondary">ルート</button>
+                    </div>
+                </div>
+
+                <div class="store-card">
+                    <div class="card-header">
+                        <button class="favorite-btn">🤍</button>
+                    </div>
+                    <div class="store-main">
+                        <div class="store-icon restaurant">☕</div>
+                        <div class="store-info">
+                            <h3 class="store-name">カフェ・ドルチェ</h3>
+                            <div class="store-category restaurant">レストラン・飲食店</div>
+                            <div class="store-rating">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="rating-text">4.6 (324件)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="store-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">📍</span>
+                            <span class="detail-text">0.8km • 徒歩10分</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🕒</span>
+                            <span class="detail-text">営業中 • 22:00まで</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">💎</span>
+                            <span class="detail-text">5%還元 • 150pt獲得</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-btn primary">詳細を見る</button>
+                        <button class="action-btn secondary">ルート</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active">
+                <span class="nav-icon">🏪</span>
+                <span class="nav-label">店舗</span>
+            </button>
+            <button class="nav-item">
+                <span class="nav-icon">💕</span>
+                <span class="nav-label">お気に入り</span>
+            </button>
+            <button class="nav-item">
+                <span class="nav-icon">💎</span>
+                <span class="nav-label">ポイント</span>
+            </button>
+            <button class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">マイページ</span>
+            </button>
+        </nav>
+    </div>
+
+    <script>
+        let map;
+        let markers = [];
+
+        function initMap() {
+            const mapStyles = [
+                { elementType: "geometry", stylers: [{ color: "#fff3f8" }] },
+                { elementType: "labels.text.fill", stylers: [{ color: "#ff66b3" }] },
+                { elementType: "labels.text.stroke", stylers: [{ color: "#ffffff" }] },
+                { featureType: "poi", stylers: [{ color: "#fce1e1" }] },
+                { featureType: "road", stylers: [{ color: "#ffffff" }] },
+                { featureType: "water", stylers: [{ color: "#d8f1ff" }] }
+            ];
+
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 35.6762, lng: 139.6503 },
+                zoom: 16,
+                styles: mapStyles,
+                disableDefaultUI: true,
+                gestureHandling: 'greedy',
+                zoomControl: false,
+                mapTypeControl: false,
+                streetViewControl: false,
+                fullscreenControl: false
+            });
+
+            const stores = [
+                { lat: 35.6762, lng: 139.6503, name: "ビューティーサロン麗", icon: "💄" },
+                { lat: 35.6732, lng: 139.6543, name: "ファッション館NOVA", icon: "🛍️" },
+                { lat: 35.6792, lng: 139.6483, name: "カフェ・ドルチェ", icon: "☕" }
+            ];
+
+            stores.forEach(store => {
+                const marker = new google.maps.Marker({
+                    position: { lat: store.lat, lng: store.lng },
+                    map: map,
+                    title: store.name,
+                    icon: {
+                        url: `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
+                            <svg width="35" height="35" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="17.5" cy="17.5" r="15" fill="#ff66b3" stroke="#ffffff" stroke-width="2"/>
+                                <text x="17.5" y="22" text-anchor="middle" font-size="14">${store.icon}</text>
+                            </svg>
+                        `)}`,
+                        scaledSize: new google.maps.Size(35, 35)
+                    }
+                });
+                markers.push(marker);
+            });
+
+            document.querySelector('.zoom-in').addEventListener('click', () => {
+                map.setZoom(map.getZoom() + 1);
+            });
+
+            document.querySelector('.zoom-out').addEventListener('click', () => {
+                map.setZoom(map.getZoom() - 1);
+            });
+
+            document.querySelector('.current-location').addEventListener('click', () => {
+                map.setCenter({ lat: 35.6762, lng: 139.6503 });
+            });
+        }
+
+        window.onload = initMap;
+    </script>
+</body>
+</html>

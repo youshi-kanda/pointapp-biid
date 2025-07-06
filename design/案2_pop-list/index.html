@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>biid Store - Pop List Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="user-section">
+                    <div class="user-avatar">田</div>
+                    <div class="user-info">
+                        <h2 class="user-name">田中太郎</h2>
+                        <p class="member-info">会員ID: MT2345 | 東京都新宿区</p>
+                    </div>
+                </div>
+                <div class="brand-section">
+                    <h1 class="brand-title">biid StoreConnect</h1>
+                </div>
+                <div class="points-section">
+                    <div class="points-display">
+                        <span class="points-label">ポイント</span>
+                        <span class="points-value">15,420</span>
+                        <span class="points-unit">pt</span>
+                    </div>
+                </div>
+                <div class="nav-section">
+                    <button class="nav-btn active">店舗検索</button>
+                    <button class="nav-btn">お気に入り</button>
+                    <button class="nav-btn">履歴</button>
+                    <button class="nav-btn">設定</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Quick Filters -->
+        <section class="quick-filters">
+            <div class="filter-container">
+                <button class="filter-chip active">現在地を取得</button>
+                <div class="radius-chips">
+                    <button class="radius-chip">500m</button>
+                    <button class="radius-chip">1km</button>
+                    <button class="radius-chip active">3km</button>
+                    <button class="radius-chip">5km</button>
+                </div>
+                <div class="category-chips">
+                    <button class="category-chip restaurant">🍽️ レストラン</button>
+                    <button class="category-chip shopping">🛍️ ショッピング</button>
+                    <button class="category-chip beauty">💅 美容</button>
+                    <button class="category-chip entertainment">🎭 エンタメ</button>
+                    <button class="category-chip health">🏥 医療</button>
+                    <button class="category-chip education">📚 教育</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="map-header">
+                <h2 class="map-title">近くのbiid加盟店</h2>
+                <div class="map-controls">
+                    <span class="store-count">12件見つかりました</span>
+                    <button class="view-toggle active">リスト表示</button>
+                    <button class="view-toggle">マップ表示</button>
+                </div>
+            </div>
+            <div id="map" class="map-container"></div>
+        </section>
+
+        <!-- Store List Section -->
+        <section class="store-list-section">
+            <div class="list-header">
+                <h2 class="list-title">店舗リスト</h2>
+                <div class="sort-controls">
+                    <select class="sort-select">
+                        <option>距離順</option>
+                        <option>評価順</option>
+                        <option>ポイント還元率順</option>
+                        <option>新着順</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="store-list">
+                <div class="store-item featured">
+                    <div class="store-badge">おすすめ</div>
+                    <div class="store-content">
+                        <div class="store-main">
+                            <div class="store-icon beauty">💄</div>
+                            <div class="store-info">
+                                <h3 class="store-name">ビューティーサロン麗</h3>
+                                <div class="store-meta">
+                                    <span class="category beauty">サービス・美容</span>
+                                    <span class="rating">⭐ 4.8 (89件)</span>
+                                    <span class="distance">📍 0.6km</span>
+                                    <span class="status open">営業中</span>
+                                </div>
+                                <p class="store-address">東京都新宿区西新宿1-6-7</p>
+                            </div>
+                        </div>
+                        <div class="store-points">
+                            <div class="points-info">
+                                <span class="points-rate">8%還元</span>
+                                <span class="points-earn">480pt獲得</span>
+                            </div>
+                            <div class="store-actions">
+                                <button class="action-btn primary">詳細</button>
+                                <button class="action-btn secondary">地図</button>
+                                <button class="favorite-btn">♡</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="store-item">
+                    <div class="store-content">
+                        <div class="store-main">
+                            <div class="store-icon shopping">🛍️</div>
+                            <div class="store-info">
+                                <h3 class="store-name">ファッション館NOVA</h3>
+                                <div class="store-meta">
+                                    <span class="category shopping">小売・ショッピング</span>
+                                    <span class="rating">⭐ 4.3 (156件)</span>
+                                    <span class="distance">📍 1.2km</span>
+                                    <span class="status open">営業中</span>
+                                </div>
+                                <p class="store-address">東京都新宿区西新宿2-4-5</p>
+                            </div>
+                        </div>
+                        <div class="store-points">
+                            <div class="points-info">
+                                <span class="points-rate">3%還元</span>
+                                <span class="points-earn">320pt獲得</span>
+                            </div>
+                            <div class="store-actions">
+                                <button class="action-btn primary">詳細</button>
+                                <button class="action-btn secondary">地図</button>
+                                <button class="favorite-btn">♡</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="store-item">
+                    <div class="store-content">
+                        <div class="store-main">
+                            <div class="store-icon restaurant">☕</div>
+                            <div class="store-info">
+                                <h3 class="store-name">カフェ・ドルチェ</h3>
+                                <div class="store-meta">
+                                    <span class="category restaurant">レストラン・飲食店</span>
+                                    <span class="rating">⭐ 4.6 (324件)</span>
+                                    <span class="distance">📍 0.8km</span>
+                                    <span class="status open">営業中</span>
+                                </div>
+                                <p class="store-address">東京都新宿区西新宿1-2-3</p>
+                            </div>
+                        </div>
+                        <div class="store-points">
+                            <div class="points-info">
+                                <span class="points-rate">5%還元</span>
+                                <span class="points-earn">150pt獲得</span>
+                            </div>
+                            <div class="store-actions">
+                                <button class="action-btn primary">詳細</button>
+                                <button class="action-btn secondary">地図</button>
+                                <button class="favorite-btn">♡</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="store-item">
+                    <div class="store-content">
+                        <div class="store-main">
+                            <div class="store-icon health">🏥</div>
+                            <div class="store-info">
+                                <h3 class="store-name">ドラッグストア メディカル</h3>
+                                <div class="store-meta">
+                                    <span class="category health">医療・健康</span>
+                                    <span class="rating">⭐ 4.1 (89件)</span>
+                                    <span class="distance">📍 0.7km</span>
+                                    <span class="status open">営業中</span>
+                                </div>
+                                <p class="store-address">東京都新宿区西新宿1-24-25</p>
+                            </div>
+                        </div>
+                        <div class="store-points">
+                            <div class="points-info">
+                                <span class="points-rate">2%還元</span>
+                                <span class="points-earn">80pt獲得</span>
+                            </div>
+                            <div class="store-actions">
+                                <button class="action-btn primary">詳細</button>
+                                <button class="action-btn secondary">地図</button>
+                                <button class="favorite-btn">♡</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let map;
+        let markers = [];
+
+        function initMap() {
+            const mapStyles = [
+                { elementType: "geometry", stylers: [{ color: "#fff3f8" }] },
+                { elementType: "labels.text.fill", stylers: [{ color: "#ff66b3" }] },
+                { elementType: "labels.text.stroke", stylers: [{ color: "#ffffff" }] },
+                { featureType: "poi", stylers: [{ color: "#fce1e1" }] },
+                { featureType: "road", stylers: [{ color: "#ffffff" }] },
+                { featureType: "water", stylers: [{ color: "#d8f1ff" }] }
+            ];
+
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 35.6762, lng: 139.6503 },
+                zoom: 15,
+                styles: mapStyles,
+                disableDefaultUI: true,
+                zoomControl: true,
+                mapTypeControl: false,
+                streetViewControl: false,
+                fullscreenControl: false
+            });
+
+            const stores = [
+                { lat: 35.6762, lng: 139.6503, name: "ビューティーサロン麗", icon: "💄", color: "#e91e63" },
+                { lat: 35.6732, lng: 139.6543, name: "ファッション館NOVA", icon: "🛍️", color: "#fd79a8" },
+                { lat: 35.6792, lng: 139.6483, name: "カフェ・ドルチェ", icon: "☕", color: "#ff7675" },
+                { lat: 35.6752, lng: 139.6523, name: "ドラッグストア メディカル", icon: "🏥", color: "#00b894" }
+            ];
+
+            stores.forEach(store => {
+                const marker = new google.maps.Marker({
+                    position: { lat: store.lat, lng: store.lng },
+                    map: map,
+                    title: store.name,
+                    icon: {
+                        url: `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
+                            <svg width="45" height="45" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="22.5" cy="22.5" r="20" fill="${store.color}" stroke="#ffffff" stroke-width="3"/>
+                                <text x="22.5" y="28" text-anchor="middle" font-size="18">${store.icon}</text>
+                            </svg>
+                        `)}`,
+                        scaledSize: new google.maps.Size(45, 45)
+                    }
+                });
+                markers.push(marker);
+            });
+        }
+
+        window.onload = initMap;
+    </script>
+</body>
+</html>
