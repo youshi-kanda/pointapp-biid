@@ -1,176 +1,105 @@
-/* Cafe Girly Style - Custom CSS */
+/* Cafe Girly Style - Simplified & Refined */
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap');
 
 /* Font Classes */
 .font-dancing {
     font-family: 'Dancing Script', cursive;
 }
 
-/* Custom Animations */
-@keyframes float-gentle {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-8px) rotate(1deg); }
-}
-
-@keyframes bounce-soft {
+/* Simplified Animations */
+@keyframes gentle-float {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-5px); }
+    50% { transform: translateY(-4px); }
 }
 
-@keyframes shimmer-cafe {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-}
-
-@keyframes pulse-heart {
+@keyframes subtle-pulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-}
-
-@keyframes wiggle {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(1deg); }
-    75% { transform: rotate(-1deg); }
+    50% { transform: scale(1.02); }
 }
 
 /* Animation Classes */
-.float-gentle {
-    animation: float-gentle 4s ease-in-out infinite;
+.gentle-float {
+    animation: gentle-float 6s ease-in-out infinite;
 }
 
-.bounce-soft {
-    animation: bounce-soft 2s ease-in-out infinite;
+.subtle-pulse {
+    animation: subtle-pulse 4s ease-in-out infinite;
 }
 
-.pulse-heart {
-    animation: pulse-heart 1.5s ease-in-out infinite;
-}
-
-.wiggle {
-    animation: wiggle 2s ease-in-out infinite;
-}
-
-/* Custom Gradients */
+/* Simplified Gradients */
 .bg-cafe-gradient {
-    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 25%, #f48fb1 50%, #f06292 75%, #ec407a 100%);
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
 }
 
-.bg-latte-gradient {
-    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 25%, #ffcc80 50%, #ffb74d 75%, #ffa726 100%);
+.bg-cream-soft {
+    background: linear-gradient(135deg, #fff8f5 0%, #fdf2f8 100%);
 }
 
-.bg-cream-gradient {
-    background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 50%, #eeeeee 100%);
+/* Refined Shadows */
+.shadow-soft {
+    box-shadow: 0 4px 12px rgba(248, 187, 217, 0.15);
 }
 
-/* Custom Shadows */
-.shadow-cafe {
-    box-shadow: 0 15px 35px rgba(236, 64, 122, 0.2), 0 5px 15px rgba(236, 64, 122, 0.1);
+.shadow-gentle {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.shadow-latte {
-    box-shadow: 0 10px 25px rgba(255, 167, 38, 0.15), 0 5px 10px rgba(255, 167, 38, 0.1);
+/* Clean Borders */
+.border-soft {
+    border: 1px solid #f8bbd9;
+    border-radius: 16px;
 }
 
-.shadow-soft-pink {
-    box-shadow: 0 8px 20px rgba(248, 187, 217, 0.3), 0 3px 8px rgba(248, 187, 217, 0.2);
-}
-
-/* Cafe-themed Borders */
-.border-cafe {
-    border: 3px solid #f8bbd9;
-    border-radius: 25px;
-}
-
-.border-latte {
-    border: 3px solid #ffcc80;
-    border-radius: 20px;
-}
-
-/* Button Styles */
+/* Refined Button Styles */
 .btn-cafe {
-    background: linear-gradient(135deg, #ec407a, #ad1457);
+    background: #ec407a;
     border: none;
-    border-radius: 30px;
-    padding: 14px 28px;
+    border-radius: 20px;
+    padding: 12px 24px;
     color: white;
-    font-weight: 600;
+    font-weight: 500;
     font-family: 'Poppins', sans-serif;
-    box-shadow: 0 8px 20px rgba(173, 20, 87, 0.3);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-cafe::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-}
-
-.btn-cafe:hover::before {
-    left: 100%;
+    box-shadow: 0 3px 8px rgba(236, 64, 122, 0.2);
+    transition: all 0.2s ease;
 }
 
 .btn-cafe:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(173, 20, 87, 0.4);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(236, 64, 122, 0.25);
+    background: #e91e63;
 }
 
-.btn-latte {
-    background: linear-gradient(135deg, #ffa726, #f57c00);
+.btn-soft {
+    background: #f8bbd9;
     border: none;
-    border-radius: 25px;
-    padding: 12px 24px;
-    color: white;
-    font-weight: 600;
-    box-shadow: 0 6px 15px rgba(245, 124, 0, 0.3);
-    transition: all 0.3s ease;
+    border-radius: 16px;
+    padding: 10px 20px;
+    color: #ad1457;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(248, 187, 217, 0.3);
+    transition: all 0.2s ease;
 }
 
-.btn-latte:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(245, 124, 0, 0.4);
+.btn-soft:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(248, 187, 217, 0.4);
 }
 
-/* Card Styles */
+/* Refined Card Styles */
 .card-cafe {
     background: white;
-    border-radius: 25px;
-    padding: 24px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    border: 3px solid #f8bbd9;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.card-cafe::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(248, 187, 217, 0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.card-cafe:hover::before {
-    opacity: 1;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f8bbd9;
+    transition: all 0.2s ease;
 }
 
 .card-cafe:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     border-color: #ec407a;
 }
 
