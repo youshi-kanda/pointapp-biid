@@ -139,7 +139,11 @@ class TokenObtainView(APIView):
         if not email or not password:
             return Response({'error': 'Email and password required'}, status=400)
         
-        user = authenticate(username=email, password=password)
+        try:
+            user_obj = User.objects.get(email=email)
+            user = authenticate(username=user_obj.username, password=password)
+        except User.DoesNotExist:
+            user = None
         if not user:
             return Response({'error': 'Invalid credentials'}, status=401)
         
