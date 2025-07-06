@@ -1,0 +1,717 @@
+/* Illustration Style CSS - Hand-drawn Casual Design */
+
+/* Doodle Background Elements */
+.sketch-doodle {
+    position: absolute;
+    opacity: 0.3;
+    animation: sketch-float 6s ease-in-out infinite;
+}
+
+.sketch-star {
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #fbbf24, transparent);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.sketch-heart {
+    width: 16px;
+    height: 16px;
+    background: #f87171;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform: rotate(-45deg);
+}
+
+.sketch-heart::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: #f87171;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    transform: translate(-50%, 50%);
+}
+
+.sketch-heart::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: #f87171;
+    border-radius: 50%;
+    position: absolute;
+    left: -50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
+.sketch-circle {
+    width: 24px;
+    height: 24px;
+    border: 3px dashed #a78bfa;
+    border-radius: 50%;
+}
+
+.sketch-triangle {
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 20px solid #34d399;
+}
+
+.sketch-squiggle {
+    width: 40px;
+    height: 8px;
+    background: repeating-linear-gradient(
+        45deg,
+        #fb7185,
+        #fb7185 4px,
+        transparent 4px,
+        transparent 8px
+    );
+    border-radius: 4px;
+}
+
+/* Header Styles */
+.sketch-header-container {
+    @apply bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-2xl border-4;
+    border-color: #fbbf24;
+    border-style: dashed;
+    position: relative;
+    transform: rotate(-1deg);
+}
+
+.sketch-header-container::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px solid #f59e0b;
+    border-radius: 24px;
+    border-style: dotted;
+    z-index: -1;
+}
+
+.sketch-logo-section {
+    @apply flex flex-col items-center mb-6;
+}
+
+.sketch-logo-bubble {
+    @apply relative;
+    transform: rotate(2deg);
+}
+
+.sketch-text-wobble {
+    animation: sketch-wobble 3s ease-in-out infinite;
+}
+
+.sketch-underline {
+    @apply absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange-400 to-transparent;
+    border-radius: 50%;
+    animation: sketch-wiggle 2s ease-in-out infinite;
+}
+
+.sketch-tagline {
+    @apply mt-2;
+    transform: rotate(-1deg);
+}
+
+.sketch-user-card {
+    @apply bg-gradient-to-br from-pink-100 to-orange-100 rounded-2xl p-4 border-3 border-dashed border-pink-300 flex items-center space-x-4 mb-6;
+    position: relative;
+    transform: rotate(1deg);
+}
+
+.sketch-user-card::after {
+    content: '♪';
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 20px;
+    color: #f97316;
+    animation: sketch-bounce 2s infinite;
+}
+
+.sketch-avatar {
+    @apply w-16 h-16 bg-gradient-to-br from-orange-400 to-pink-400 rounded-full flex items-center justify-center relative;
+    border: 3px dashed white;
+}
+
+.sketch-avatar-doodle {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 12px;
+    height: 12px;
+    background: #fbbf24;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.sketch-user-info {
+    @apply flex-1;
+}
+
+.sketch-points-badge {
+    @apply flex items-center space-x-2 mt-2;
+}
+
+.sketch-coin-doodle {
+    width: 16px;
+    height: 16px;
+    background: radial-gradient(circle, #fbbf24, #f59e0b);
+    border-radius: 50%;
+    border: 2px solid #92400e;
+    animation: sketch-spin 3s linear infinite;
+}
+
+.sketch-nav-tabs {
+    @apply flex space-x-2 overflow-x-auto;
+}
+
+.sketch-tab {
+    @apply flex flex-col items-center space-y-1 px-4 py-3 rounded-2xl transition-all duration-300 relative;
+    border: 2px solid transparent;
+    transform: rotate(0deg);
+}
+
+.sketch-tab:hover {
+    @apply bg-yellow-50;
+    transform: translateY(-3px) rotate(1deg);
+}
+
+.sketch-tab.active {
+    @apply bg-gradient-to-br from-yellow-100 to-orange-100;
+    border-color: #f59e0b;
+    border-style: dashed;
+    transform: rotate(-1deg);
+}
+
+.sketch-tab-underline {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    background: #f59e0b;
+    border-radius: 2px;
+    animation: sketch-wiggle 2s ease-in-out infinite;
+}
+
+.sketch-icon {
+    @apply text-2xl;
+    animation: sketch-bounce 2s ease-in-out infinite;
+}
+
+/* Search Section */
+.sketch-search-section {
+    @apply bg-white/85 backdrop-blur-sm rounded-3xl p-6 mb-8 shadow-xl border-3 border-dashed border-blue-300 relative;
+    transform: rotate(0.5deg);
+}
+
+.sketch-search-section::before {
+    content: '✨';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    animation: sketch-twinkle 2s ease-in-out infinite;
+}
+
+.sketch-search-header {
+    @apply flex items-center justify-between mb-6 relative;
+}
+
+.sketch-search-doodle {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #3b82f6;
+    border-radius: 50%;
+    border-style: dashed;
+    animation: sketch-rotate 4s linear infinite;
+}
+
+.sketch-location-container {
+    @apply flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-6;
+}
+
+.sketch-location-btn {
+    @apply bg-gradient-to-r from-green-400 to-blue-400 text-white px-6 py-3 rounded-2xl shadow-lg transition-all duration-300 relative;
+    border: 3px solid white;
+    transform: rotate(-1deg);
+}
+
+.sketch-location-btn:hover {
+    transform: rotate(1deg) scale(1.05);
+}
+
+.sketch-btn-shadow {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: -4px;
+    bottom: -4px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    z-index: -1;
+}
+
+.sketch-location-icon {
+    @apply text-xl;
+    animation: sketch-pulse 2s ease-in-out infinite;
+}
+
+.sketch-range-selector {
+    @apply flex flex-col space-y-2;
+}
+
+.sketch-range-options {
+    @apply flex space-x-2;
+}
+
+.sketch-range-btn {
+    @apply px-4 py-2 rounded-full bg-white border-2 border-dashed border-gray-300 text-gray-700 transition-all duration-300;
+}
+
+.sketch-range-btn:hover {
+    transform: rotate(-2deg) scale(1.05);
+    @apply border-blue-400 bg-blue-50;
+}
+
+.sketch-range-btn.active {
+    @apply bg-gradient-to-r from-blue-400 to-purple-400 text-white border-blue-500;
+    transform: rotate(2deg);
+}
+
+.sketch-category-section {
+    @apply mt-6;
+}
+
+.sketch-category-grid {
+    @apply grid grid-cols-2 sm:grid-cols-3 gap-4;
+}
+
+.sketch-category-card {
+    @apply bg-white rounded-2xl p-4 shadow-lg transition-all duration-300 relative;
+    border: 3px solid transparent;
+    transform: rotate(0deg);
+}
+
+.sketch-category-card:hover {
+    transform: rotate(-2deg) scale(1.05);
+    @apply shadow-xl;
+}
+
+.sketch-category-card.active {
+    @apply bg-gradient-to-br from-purple-100 to-pink-100;
+    border-color: #a855f7;
+    border-style: dashed;
+    transform: rotate(1deg);
+}
+
+.sketch-category-icon {
+    @apply text-3xl mb-2;
+    animation: sketch-wiggle 3s ease-in-out infinite;
+}
+
+.sketch-category-border {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: 2px dotted #d1d5db;
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.sketch-category-card:hover .sketch-category-border {
+    opacity: 1;
+}
+
+/* Content Section */
+.sketch-content-section {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8;
+}
+
+.sketch-map-container {
+    @apply bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-xl border-3 border-dashed border-green-300 relative;
+    transform: rotate(-0.5deg);
+}
+
+.sketch-map-container::before {
+    content: '🗺️';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+}
+
+.sketch-map-header {
+    @apply flex items-center justify-between mb-4;
+}
+
+.sketch-store-counter {
+    @apply bg-gradient-to-r from-orange-100 to-yellow-100 px-4 py-2 rounded-full border-2 border-dashed border-orange-300;
+    transform: rotate(2deg);
+}
+
+.sketch-map-area {
+    @apply relative;
+}
+
+.sketch-map-border {
+    border: 4px dashed #10b981;
+    position: relative;
+}
+
+.sketch-map-border::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px dotted #059669;
+    border-radius: 24px;
+}
+
+.sketch-map-pin {
+    @apply absolute cursor-pointer;
+    animation: sketch-bounce 3s ease-in-out infinite;
+}
+
+.sketch-pin-illustration {
+    @apply w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-xl border-3 border-dashed;
+    border-color: #f59e0b;
+    transform: rotate(-5deg);
+}
+
+.sketch-pin-label {
+    @apply absolute top-14 left-1/2 transform -translate-x-1/2 bg-white px-2 py-1 rounded-lg text-xs font-comic font-semibold shadow-md border border-gray-200;
+    white-space: nowrap;
+    transform: translateX(-50%) rotate(3deg);
+}
+
+.sketch-current-location {
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center;
+}
+
+.sketch-current-pin {
+    @apply w-8 h-8 bg-gradient-to-br from-red-400 to-pink-400 rounded-full border-4 border-white shadow-lg;
+    animation: sketch-pulse 2s infinite;
+}
+
+.sketch-current-label {
+    @apply mt-2 bg-red-100 px-2 py-1 rounded-lg text-xs font-comic font-bold text-red-700;
+    transform: rotate(-2deg);
+}
+
+.sketch-road {
+    position: absolute;
+    background: repeating-linear-gradient(
+        90deg,
+        #e5e7eb,
+        #e5e7eb 10px,
+        #d1d5db 10px,
+        #d1d5db 20px
+    );
+    border-radius: 4px;
+}
+
+.sketch-road-1 {
+    top: 40%;
+    left: 10%;
+    right: 10%;
+    height: 8px;
+    transform: rotate(-5deg);
+}
+
+.sketch-road-2 {
+    top: 20%;
+    bottom: 20%;
+    left: 60%;
+    width: 8px;
+    transform: rotate(10deg);
+}
+
+/* Store List */
+.sketch-store-list {
+    @apply bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-xl border-3 border-dashed border-purple-300 relative;
+    transform: rotate(0.5deg);
+}
+
+.sketch-store-list::before {
+    content: '📋';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+}
+
+.sketch-list-header {
+    @apply flex items-center justify-between mb-6;
+}
+
+.sketch-sort-btn {
+    @apply bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 rounded-2xl border-2 border-dashed border-purple-300 transition-all duration-300;
+    transform: rotate(-1deg);
+}
+
+.sketch-sort-btn:hover {
+    transform: rotate(-2deg) scale(1.05);
+}
+
+.sketch-sort-icon {
+    @apply text-lg;
+    animation: sketch-wiggle 2s ease-in-out infinite;
+}
+
+.sketch-store-card {
+    @apply bg-gradient-to-br from-white to-gray-50 rounded-3xl p-6 shadow-lg transition-all duration-300 relative;
+    border: 3px solid transparent;
+    transform: rotate(0deg);
+}
+
+.sketch-store-card:hover {
+    transform: rotate(-1deg) scale(1.02);
+    @apply shadow-xl;
+    border-color: #a855f7;
+    border-style: dashed;
+}
+
+.sketch-store-illustration {
+    @apply absolute top-4 left-4 w-16 h-16 bg-gradient-to-br from-yellow-100 to-orange-100 rounded-2xl flex items-center justify-center text-2xl border-2 border-dashed border-orange-300;
+    transform: rotate(-3deg);
+}
+
+.sketch-store-content {
+    @apply ml-20 mb-4;
+}
+
+.sketch-store-details {
+    @apply flex flex-wrap items-center gap-4 mt-2;
+}
+
+.sketch-rating {
+    @apply flex items-center space-x-1;
+}
+
+.sketch-distance {
+    @apply flex items-center;
+}
+
+.sketch-status {
+    @apply px-3 py-1 rounded-full text-xs font-comic font-bold;
+    transform: rotate(1deg);
+}
+
+.sketch-status.open {
+    @apply bg-green-100 text-green-700 border-2 border-dashed border-green-300;
+}
+
+.sketch-status.closed {
+    @apply bg-red-100 text-red-700 border-2 border-dashed border-red-300;
+}
+
+.sketch-points-info {
+    @apply mt-3 flex items-center space-x-2;
+}
+
+.sketch-detail-btn {
+    @apply absolute bottom-4 right-4 bg-gradient-to-r from-blue-400 to-purple-400 text-white px-4 py-2 rounded-2xl shadow-lg transition-all duration-300 flex items-center space-x-2;
+    border: 2px solid white;
+    transform: rotate(-2deg);
+}
+
+.sketch-detail-btn:hover {
+    transform: rotate(2deg) scale(1.05);
+}
+
+.sketch-btn-arrow {
+    @apply text-lg;
+    animation: sketch-bounce 2s ease-in-out infinite;
+}
+
+.sketch-card-border {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px dotted #d1d5db;
+    border-radius: 24px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.sketch-store-card:hover .sketch-card-border {
+    opacity: 1;
+}
+
+/* Bottom Navigation */
+.sketch-bottom-nav {
+    @apply bg-white/95 backdrop-blur-lg mx-4 mb-4 rounded-3xl shadow-2xl p-4 flex justify-around border-3 border-dashed border-gray-300;
+    transform: rotate(-0.5deg);
+}
+
+.sketch-nav-item {
+    @apply flex flex-col items-center space-y-1 px-4 py-2 rounded-2xl transition-all duration-300 relative;
+}
+
+.sketch-nav-item:hover {
+    transform: translateY(-5px) rotate(-2deg);
+}
+
+.sketch-nav-item.active {
+    @apply bg-gradient-to-br from-yellow-100 to-orange-100;
+}
+
+.sketch-nav-highlight {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    background: #f59e0b;
+    border-radius: 2px;
+    animation: sketch-wiggle 2s ease-in-out infinite;
+}
+
+.sketch-nav-icon {
+    @apply text-xl;
+    animation: sketch-bounce 2s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes sketch-float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+    66% {
+        transform: translateY(-5px) rotate(-3deg);
+    }
+}
+
+@keyframes sketch-wobble {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-2deg);
+    }
+    75% {
+        transform: rotate(2deg);
+    }
+}
+
+@keyframes sketch-wiggle {
+    0%, 100% {
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(-2px);
+    }
+    75% {
+        transform: translateX(2px);
+    }
+}
+
+@keyframes sketch-bounce {
+    0%, 20%, 53%, 80%, 100% {
+        transform: translate3d(0,0,0);
+    }
+    40%, 43% {
+        transform: translate3d(0, -10px, 0);
+    }
+    70% {
+        transform: translate3d(0, -5px, 0);
+    }
+    90% {
+        transform: translate3d(0, -2px, 0);
+    }
+}
+
+@keyframes sketch-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes sketch-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+@keyframes sketch-twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes sketch-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sketch-header-container {
+        @apply mx-2;
+        transform: rotate(0deg);
+    }
+    
+    .sketch-search-section {
+        @apply mx-2;
+        transform: rotate(0deg);
+    }
+    
+    .sketch-content-section {
+        @apply grid-cols-1 gap-4 mx-2;
+    }
+    
+    .sketch-category-grid {
+        @apply grid-cols-2;
+    }
+    
+    .sketch-nav-tabs {
+        @apply space-x-1;
+    }
+    
+    .sketch-tab {
+        @apply px-2 py-2;
+    }
+    
+    .sketch-map-container,
+    .sketch-store-list {
+        transform: rotate(0deg);
+    }
+}

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIID Store - Illustration Style</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sketch-orange': {
+                            50: '#fff8f1',
+                            100: '#feecdc',
+                            200: '#fcd9bd',
+                            300: '#fdba8c',
+                            400: '#ff8a4c',
+                            500: '#ff5a1f',
+                            600: '#d03801',
+                            700: '#b43403',
+                            800: '#8a2c0d',
+                            900: '#73230d'
+                        },
+                        'sketch-blue': {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+                        },
+                        'sketch-green': {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d'
+                        },
+                        'sketch-purple': {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7c3aed',
+                            800: '#6b21a8',
+                            900: '#581c87'
+                        }
+                    },
+                    fontFamily: {
+                        'kalam': ['Kalam', 'cursive'],
+                        'comic': ['Comic Neue', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-yellow-50 via-orange-50 to-pink-50 min-h-screen font-comic overflow-x-hidden">
+    <!-- Doodle Background -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="sketch-doodle sketch-star" style="top: 10%; left: 5%;"></div>
+        <div class="sketch-doodle sketch-heart" style="top: 20%; right: 10%;"></div>
+        <div class="sketch-doodle sketch-circle" style="bottom: 30%; left: 8%;"></div>
+        <div class="sketch-doodle sketch-triangle" style="bottom: 15%; right: 15%;"></div>
+        <div class="sketch-doodle sketch-squiggle" style="top: 50%; left: 2%;"></div>
+    </div>
+
+    <!-- Asymmetric Header Layout -->
+    <header class="relative z-10 p-4">
+        <div class="sketch-header-container">
+            <!-- Logo Section -->
+            <div class="sketch-logo-section">
+                <div class="sketch-logo-bubble">
+                    <h1 class="text-3xl font-kalam font-bold text-sketch-orange-600 sketch-text-wobble">biid</h1>
+                    <div class="sketch-underline"></div>
+                </div>
+                <div class="sketch-tagline">
+                    <span class="text-sm font-comic text-gray-600">お店探しが楽しくなる♪</span>
+                </div>
+            </div>
+
+            <!-- User Info Sketch Card -->
+            <div class="sketch-user-card">
+                <div class="sketch-avatar">
+                    <span class="text-xl font-bold text-white">田</span>
+                    <div class="sketch-avatar-doodle"></div>
+                </div>
+                <div class="sketch-user-info">
+                    <h3 class="font-kalam font-bold text-gray-800">田中太郎さん</h3>
+                    <p class="text-xs text-gray-600">会員ID: MT2345</p>
+                    <div class="sketch-points-badge">
+                        <span class="font-bold text-sketch-orange-600">15,420pt</span>
+                        <div class="sketch-coin-doodle"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="sketch-nav-tabs">
+                <button class="sketch-tab active">
+                    <div class="sketch-icon">🏪</div>
+                    <span>店舗検索</span>
+                    <div class="sketch-tab-underline"></div>
+                </button>
+                <button class="sketch-tab">
+                    <div class="sketch-icon">❤️</div>
+                    <span>お気に入り</span>
+                </button>
+                <button class="sketch-tab">
+                    <div class="sketch-icon">📱</div>
+                    <span>履歴</span>
+                </button>
+                <button class="sketch-tab">
+                    <div class="sketch-icon">⚙️</div>
+                    <span>設定</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Organic Layout Main Content -->
+    <main class="relative z-10 px-4 pb-20">
+        <!-- Search Section with Hand-drawn Style -->
+        <section class="sketch-search-section">
+            <div class="sketch-search-header">
+                <h2 class="text-2xl font-kalam font-bold text-sketch-blue-600">近くのお店を見つけよう！</h2>
+                <div class="sketch-search-doodle"></div>
+            </div>
+
+            <!-- Location & Range Selector -->
+            <div class="sketch-location-container">
+                <button class="sketch-location-btn">
+                    <div class="sketch-location-icon">📍</div>
+                    <span class="font-comic font-semibold">現在地を取得</span>
+                    <div class="sketch-btn-shadow"></div>
+                </button>
+                
+                <div class="sketch-range-selector">
+                    <span class="text-sm font-comic text-gray-600">検索範囲:</span>
+                    <div class="sketch-range-options">
+                        <button class="sketch-range-btn">500m</button>
+                        <button class="sketch-range-btn">1km</button>
+                        <button class="sketch-range-btn active">3km</button>
+                        <button class="sketch-range-btn">5km</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Selection with Illustrations -->
+            <div class="sketch-category-section">
+                <h3 class="text-lg font-kalam font-bold text-gray-700 mb-4">カテゴリーを選んでね</h3>
+                <div class="sketch-category-grid">
+                    <button class="sketch-category-card active">
+                        <div class="sketch-category-icon">🍽️</div>
+                        <span class="font-comic font-semibold">レストラン</span>
+                        <div class="sketch-category-border"></div>
+                    </button>
+                    <button class="sketch-category-card">
+                        <div class="sketch-category-icon">🛍️</div>
+                        <span class="font-comic font-semibold">ショッピング</span>
+                        <div class="sketch-category-border"></div>
+                    </button>
+                    <button class="sketch-category-card">
+                        <div class="sketch-category-icon">💄</div>
+                        <span class="font-comic font-semibold">美容・サロン</span>
+                        <div class="sketch-category-border"></div>
+                    </button>
+                    <button class="sketch-category-card">
+                        <div class="sketch-category-icon">🎮</div>
+                        <span class="font-comic font-semibold">エンタメ</span>
+                        <div class="sketch-category-border"></div>
+                    </button>
+                    <button class="sketch-category-card">
+                        <div class="sketch-category-icon">🏥</div>
+                        <span class="font-comic font-semibold">医療・健康</span>
+                        <div class="sketch-category-border"></div>
+                    </button>
+                    <button class="sketch-category-card">
+                        <div class="sketch-category-icon">📚</div>
+                        <span class="font-comic font-semibold">教育・学習</span>
+                        <div class="sketch-category-border"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Asymmetric Map and Store List Layout -->
+        <section class="sketch-content-section">
+            <!-- Map Area with Sketch Style -->
+            <div class="sketch-map-container">
+                <div class="sketch-map-header">
+                    <h3 class="text-xl font-kalam font-bold text-sketch-green-600">地図で見る</h3>
+                    <div class="sketch-store-counter">
+                        <span class="font-comic font-bold text-sketch-orange-600">12件</span>
+                        <span class="text-sm text-gray-600">見つかったよ！</span>
+                    </div>
+                </div>
+                
+                <div class="sketch-map-area">
+                    <!-- Hand-drawn Map -->
+                    <div class="w-full h-80 bg-gradient-to-br from-green-100 via-blue-50 to-purple-100 rounded-3xl relative overflow-hidden sketch-map-border">
+                        <!-- Map Pins with Illustrations -->
+                        <div class="sketch-map-pin" style="top: 25%; left: 35%;">
+                            <div class="sketch-pin-illustration">💄</div>
+                            <div class="sketch-pin-label">ビューティーサロン</div>
+                        </div>
+                        <div class="sketch-map-pin" style="top: 45%; left: 65%;">
+                            <div class="sketch-pin-illustration">🍽️</div>
+                            <div class="sketch-pin-label">カフェ・ドルチェ</div>
+                        </div>
+                        <div class="sketch-map-pin" style="top: 70%; left: 30%;">
+                            <div class="sketch-pin-illustration">🛍️</div>
+                            <div class="sketch-pin-label">ファッション館</div>
+                        </div>
+                        <div class="sketch-map-pin" style="top: 60%; left: 80%;">
+                            <div class="sketch-pin-illustration">🎮</div>
+                            <div class="sketch-pin-label">ゲームセンター</div>
+                        </div>
+                        
+                        <!-- Current Location -->
+                        <div class="sketch-current-location">
+                            <div class="sketch-current-pin"></div>
+                            <span class="sketch-current-label">現在地</span>
+                        </div>
+                        
+                        <!-- Hand-drawn Roads -->
+                        <div class="sketch-road sketch-road-1"></div>
+                        <div class="sketch-road sketch-road-2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Store List with Sketch Cards -->
+            <div class="sketch-store-list">
+                <div class="sketch-list-header">
+                    <h3 class="text-xl font-kalam font-bold text-sketch-purple-600">おすすめのお店</h3>
+                    <button class="sketch-sort-btn">
+                        <span class="font-comic">並び替え</span>
+                        <div class="sketch-sort-icon">📊</div>
+                    </button>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Store Card 1 -->
+                    <div class="sketch-store-card">
+                        <div class="sketch-store-illustration">💄</div>
+                        <div class="sketch-store-content">
+                            <h4 class="text-lg font-kalam font-bold text-gray-800">ビューティーサロン麗</h4>
+                            <p class="font-comic text-gray-600">サービス・美容 ¥¥¥</p>
+                            <div class="sketch-store-details">
+                                <div class="sketch-rating">
+                                    <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                                    <span class="font-comic text-sm">4.8 (89件)</span>
+                                </div>
+                                <div class="sketch-distance">
+                                    <span class="font-comic text-sm">📍 0.6km</span>
+                                </div>
+                                <div class="sketch-status open">営業中</div>
+                            </div>
+                            <div class="sketch-points-info">
+                                <span class="font-comic font-bold text-sketch-orange-600">480pt獲得</span>
+                                <span class="text-sm text-gray-600">(還元率: 8%)</span>
+                            </div>
+                        </div>
+                        <button class="sketch-detail-btn">
+                            <span class="font-comic font-semibold">詳細を見る</span>
+                            <div class="sketch-btn-arrow">→</div>
+                        </button>
+                        <div class="sketch-card-border"></div>
+                    </div>
+
+                    <!-- Store Card 2 -->
+                    <div class="sketch-store-card">
+                        <div class="sketch-store-illustration">🍽️</div>
+                        <div class="sketch-store-content">
+                            <h4 class="text-lg font-kalam font-bold text-gray-800">カフェ・ドルチェ</h4>
+                            <p class="font-comic text-gray-600">レストラン・飲食店 ¥¥</p>
+                            <div class="sketch-store-details">
+                                <div class="sketch-rating">
+                                    <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                                    <span class="font-comic text-sm">4.6 (124件)</span>
+                                </div>
+                                <div class="sketch-distance">
+                                    <span class="font-comic text-sm">📍 0.8km</span>
+                                </div>
+                                <div class="sketch-status open">営業中</div>
+                            </div>
+                            <div class="sketch-points-info">
+                                <span class="font-comic font-bold text-sketch-orange-600">320pt獲得</span>
+                                <span class="text-sm text-gray-600">(還元率: 5%)</span>
+                            </div>
+                        </div>
+                        <button class="sketch-detail-btn">
+                            <span class="font-comic font-semibold">詳細を見る</span>
+                            <div class="sketch-btn-arrow">→</div>
+                        </button>
+                        <div class="sketch-card-border"></div>
+                    </div>
+
+                    <!-- Store Card 3 -->
+                    <div class="sketch-store-card">
+                        <div class="sketch-store-illustration">🛍️</div>
+                        <div class="sketch-store-content">
+                            <h4 class="text-lg font-kalam font-bold text-gray-800">ファッション館NOVA</h4>
+                            <p class="font-comic text-gray-600">小売・ショッピング ¥¥¥</p>
+                            <div class="sketch-store-details">
+                                <div class="sketch-rating">
+                                    <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                                    <span class="font-comic text-sm">4.3 (67件)</span>
+                                </div>
+                                <div class="sketch-distance">
+                                    <span class="font-comic text-sm">📍 1.2km</span>
+                                </div>
+                                <div class="sketch-status closed">閉店中</div>
+                            </div>
+                            <div class="sketch-points-info">
+                                <span class="font-comic font-bold text-sketch-orange-600">600pt獲得</span>
+                                <span class="text-sm text-gray-600">(還元率: 10%)</span>
+                            </div>
+                        </div>
+                        <button class="sketch-detail-btn">
+                            <span class="font-comic font-semibold">詳細を見る</span>
+                            <div class="sketch-btn-arrow">→</div>
+                        </button>
+                        <div class="sketch-card-border"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Hand-drawn Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 z-50">
+        <div class="sketch-bottom-nav">
+            <button class="sketch-nav-item active">
+                <div class="sketch-nav-icon">🏠</div>
+                <span class="font-comic text-xs">ホーム</span>
+                <div class="sketch-nav-highlight"></div>
+            </button>
+            <button class="sketch-nav-item">
+                <div class="sketch-nav-icon">🔍</div>
+                <span class="font-comic text-xs">検索</span>
+            </button>
+            <button class="sketch-nav-item">
+                <div class="sketch-nav-icon">💳</div>
+                <span class="font-comic text-xs">ポイント</span>
+            </button>
+            <button class="sketch-nav-item">
+                <div class="sketch-nav-icon">👤</div>
+                <span class="font-comic text-xs">マイページ</span>
+            </button>
+        </div>
+    </nav>
+</body>
+</html>

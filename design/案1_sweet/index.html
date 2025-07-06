@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIID Store - Sweet Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sweet-pink': {
+                            50: '#fef7f7',
+                            100: '#feeaea', 
+                            200: '#fdd8d8',
+                            300: '#fab8b8',
+                            400: '#f58c8c',
+                            500: '#ec5a5a',
+                            600: '#d63939',
+                            700: '#b32828',
+                            800: '#942525',
+                            900: '#7c2525'
+                        },
+                        'sweet-cream': {
+                            50: '#fffef7',
+                            100: '#fffbeb',
+                            200: '#fff4d1',
+                            300: '#ffe9a6',
+                            400: '#ffd970',
+                            500: '#ffc233',
+                            600: '#ff9f0a',
+                            700: '#cc7a02',
+                            800: '#a15f08',
+                            900: '#854f0b'
+                        },
+                        'sweet-lavender': {
+                            50: '#f8f7ff',
+                            100: '#f1efff',
+                            200: '#e5e2ff',
+                            300: '#d1cbff',
+                            400: '#b5a8ff',
+                            500: '#9580ff',
+                            600: '#7c5cff',
+                            700: '#6b46c1',
+                            800: '#553c9a',
+                            900: '#46337a'
+                        }
+                    },
+                    fontFamily: {
+                        'pacifico': ['Pacifico', 'cursive'],
+                        'poppins': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-sweet-pink-50 via-white to-sweet-lavender-50 min-h-screen font-poppins">
+    <!-- Floating Header -->
+    <header class="fixed top-4 left-4 right-4 z-50">
+        <div class="sweet-floating-header">
+            <div class="flex items-center justify-between">
+                <!-- Logo & User Info -->
+                <div class="flex items-center space-x-4">
+                    <div class="sweet-logo-bubble">
+                        <span class="text-2xl font-pacifico text-sweet-pink-600">biid</span>
+                    </div>
+                    <div class="sweet-user-bubble">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-gradient-to-br from-sweet-pink-400 to-sweet-lavender-400 rounded-full flex items-center justify-center">
+                                <span class="text-white font-semibold">田</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">田中太郎</p>
+                                <p class="text-xs text-gray-600">ID: MT2345</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Points & Navigation -->
+                <div class="flex items-center space-x-4">
+                    <div class="sweet-points-bubble">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 bg-sweet-cream-400 rounded-full flex items-center justify-center">
+                                <span class="text-sweet-cream-800 text-sm font-bold">P</span>
+                            </div>
+                            <div>
+                                <p class="text-lg font-bold text-sweet-pink-600">15,420</p>
+                                <p class="text-xs text-gray-600">ポイント</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sweet-nav-bubble">
+                        <div class="flex space-x-2">
+                            <button class="sweet-nav-btn active">
+                                <span class="text-sm">🏪</span>
+                                <span class="text-xs">店舗</span>
+                            </button>
+                            <button class="sweet-nav-btn">
+                                <span class="text-sm">❤️</span>
+                                <span class="text-xs">お気に入り</span>
+                            </button>
+                            <button class="sweet-nav-btn">
+                                <span class="text-sm">📱</span>
+                                <span class="text-xs">履歴</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-8 px-4">
+        <!-- Search Floating Panel -->
+        <div class="sweet-search-panel">
+            <div class="flex items-center space-x-4 mb-6">
+                <h2 class="text-xl font-pacifico text-sweet-pink-600">近くのお店を探す</h2>
+                <div class="sweet-location-btn">
+                    <span class="text-sm">📍</span>
+                    <span class="text-sm font-medium">現在地を取得</span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Distance Bubbles -->
+                <div class="sweet-filter-group">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-3">検索範囲</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="sweet-distance-bubble">500m</button>
+                        <button class="sweet-distance-bubble">1km</button>
+                        <button class="sweet-distance-bubble active">3km</button>
+                        <button class="sweet-distance-bubble">5km</button>
+                    </div>
+                </div>
+                
+                <!-- Category Bubbles -->
+                <div class="sweet-filter-group">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-3">カテゴリー</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="sweet-category-bubble active">🍽️ レストラン</button>
+                        <button class="sweet-category-bubble">🛍️ ショッピング</button>
+                        <button class="sweet-category-bubble">💄 美容</button>
+                        <button class="sweet-category-bubble">🎮 エンタメ</button>
+                    </div>
+                </div>
+                
+                <!-- Rating Filter -->
+                <div class="sweet-filter-group">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-3">評価</h3>
+                    <div class="sweet-rating-selector">
+                        <div class="flex items-center space-x-1">
+                            <span class="text-sweet-cream-500">⭐⭐⭐⭐⭐</span>
+                            <span class="text-sm text-gray-600">4.0以上</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map & Store Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+            <!-- Map Section -->
+            <div class="sweet-map-container">
+                <div class="sweet-map-header">
+                    <h3 class="text-lg font-pacifico text-sweet-pink-600">マップ</h3>
+                    <span class="sweet-store-count">12件</span>
+                </div>
+                <div class="sweet-map-area">
+                    <!-- Simulated Map -->
+                    <div class="w-full h-96 bg-gradient-to-br from-sweet-lavender-100 to-sweet-pink-100 rounded-3xl relative overflow-hidden">
+                        <!-- Map pins -->
+                        <div class="sweet-map-pin" style="top: 20%; left: 30%;">
+                            <div class="sweet-pin-bubble">🏪</div>
+                        </div>
+                        <div class="sweet-map-pin" style="top: 40%; left: 60%;">
+                            <div class="sweet-pin-bubble">💄</div>
+                        </div>
+                        <div class="sweet-map-pin" style="top: 70%; left: 25%;">
+                            <div class="sweet-pin-bubble">🍽️</div>
+                        </div>
+                        <div class="sweet-map-pin" style="top: 60%; left: 80%;">
+                            <div class="sweet-pin-bubble">🛍️</div>
+                        </div>
+                        
+                        <!-- Current location -->
+                        <div class="sweet-current-location">
+                            <div class="sweet-current-pin"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Store List Section -->
+            <div class="sweet-store-list">
+                <div class="sweet-list-header">
+                    <h3 class="text-lg font-pacifico text-sweet-pink-600">おすすめ店舗</h3>
+                    <button class="sweet-sort-btn">
+                        <span class="text-sm">📊</span>
+                        <span class="text-sm">並び替え</span>
+                    </button>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- Store Card 1 -->
+                    <div class="sweet-store-card">
+                        <div class="flex items-start space-x-4">
+                            <div class="sweet-store-icon">💄</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-800 mb-1">ビューティーサロン麗</h4>
+                                <p class="text-sm text-gray-600 mb-2">サービス・美容 ¥¥¥</p>
+                                <div class="flex items-center space-x-4 text-xs text-gray-500">
+                                    <span class="flex items-center">
+                                        <span class="text-sweet-cream-500 mr-1">⭐</span>
+                                        4.8 (89件)
+                                    </span>
+                                    <span>📍 0.6km</span>
+                                    <span class="sweet-status-open">営業中</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="sweet-points-badge">獲得ポイント: 480pt (還元率: 8%)</span>
+                                </div>
+                            </div>
+                            <button class="sweet-detail-btn">詳細</button>
+                        </div>
+                    </div>
+
+                    <!-- Store Card 2 -->
+                    <div class="sweet-store-card">
+                        <div class="flex items-start space-x-4">
+                            <div class="sweet-store-icon">🍽️</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-800 mb-1">カフェ・ドルチェ</h4>
+                                <p class="text-sm text-gray-600 mb-2">レストラン・飲食店 ¥¥</p>
+                                <div class="flex items-center space-x-4 text-xs text-gray-500">
+                                    <span class="flex items-center">
+                                        <span class="text-sweet-cream-500 mr-1">⭐</span>
+                                        4.6 (124件)
+                                    </span>
+                                    <span>📍 0.8km</span>
+                                    <span class="sweet-status-open">営業中</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="sweet-points-badge">獲得ポイント: 320pt (還元率: 5%)</span>
+                                </div>
+                            </div>
+                            <button class="sweet-detail-btn">詳細</button>
+                        </div>
+                    </div>
+
+                    <!-- Store Card 3 -->
+                    <div class="sweet-store-card">
+                        <div class="flex items-start space-x-4">
+                            <div class="sweet-store-icon">🛍️</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-800 mb-1">ファッション館NOVA</h4>
+                                <p class="text-sm text-gray-600 mb-2">小売・ショッピング ¥¥¥</p>
+                                <div class="flex items-center space-x-4 text-xs text-gray-500">
+                                    <span class="flex items-center">
+                                        <span class="text-sweet-cream-500 mr-1">⭐</span>
+                                        4.3 (67件)
+                                    </span>
+                                    <span>📍 1.2km</span>
+                                    <span class="sweet-status-closed">閉店中</span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="sweet-points-badge">獲得ポイント: 600pt (還元率: 10%)</span>
+                                </div>
+                            </div>
+                            <button class="sweet-detail-btn">詳細</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Bottom Navigation -->
+    <nav class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+        <div class="sweet-bottom-nav">
+            <button class="sweet-bottom-nav-item active">
+                <span class="text-lg">🏠</span>
+                <span class="text-xs">ホーム</span>
+            </button>
+            <button class="sweet-bottom-nav-item">
+                <span class="text-lg">🔍</span>
+                <span class="text-xs">検索</span>
+            </button>
+            <button class="sweet-bottom-nav-item">
+                <span class="text-lg">💳</span>
+                <span class="text-xs">ポイント</span>
+            </button>
+            <button class="sweet-bottom-nav-item">
+                <span class="text-lg">👤</span>
+                <span class="text-xs">マイページ</span>
+            </button>
+        </div>
+    </nav>
+</body>
+</html>

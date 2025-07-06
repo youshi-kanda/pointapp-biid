@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIID Store - Minimal Pop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=M+PLUS+Rounded+1c:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'mint': {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a'
+                        },
+                        'lavender': {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7c3aed',
+                            800: '#6b21a8',
+                            900: '#581c87'
+                        },
+                        'coral': {
+                            50: '#fef2f2',
+                            100: '#fee2e2',
+                            200: '#fecaca',
+                            300: '#fca5a5',
+                            400: '#f87171',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            800: '#991b1b',
+                            900: '#7f1d1d'
+                        }
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'mplus': ['M PLUS Rounded 1c', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-mint-50 via-white to-lavender-50 min-h-screen font-poppins">
+    <!-- Grid-based Header -->
+    <header class="mini-header">
+        <div class="mini-container">
+            <!-- Top Grid Row -->
+            <div class="mini-header-grid">
+                <!-- Logo Section -->
+                <div class="mini-logo-section">
+                    <h1 class="mini-logo">biid</h1>
+                    <span class="mini-tagline">Store Connect</span>
+                </div>
+
+                <!-- User Info Grid -->
+                <div class="mini-user-grid">
+                    <div class="mini-avatar">
+                        <span class="text-xl font-bold text-white">田</span>
+                    </div>
+                    <div class="mini-user-info">
+                        <h3 class="mini-username">田中太郎</h3>
+                        <p class="mini-user-id">ID: MT2345</p>
+                    </div>
+                </div>
+
+                <!-- Points Display -->
+                <div class="mini-points-display">
+                    <div class="mini-points-value">15,420</div>
+                    <div class="mini-points-label">ポイント</div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="mini-action-buttons">
+                    <button class="mini-btn mini-btn-primary">店舗検索</button>
+                    <button class="mini-btn mini-btn-secondary">お気に入り</button>
+                    <button class="mini-btn mini-btn-secondary">履歴</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Horizontal Filter Bar -->
+    <section class="mini-filter-bar">
+        <div class="mini-container">
+            <div class="mini-filter-grid">
+                <!-- Location Button -->
+                <button class="mini-location-btn">
+                    <div class="mini-location-icon">📍</div>
+                    <span class="font-mplus font-bold">現在地</span>
+                </button>
+
+                <!-- Distance Filter -->
+                <div class="mini-filter-group">
+                    <span class="mini-filter-label">範囲</span>
+                    <div class="mini-filter-options">
+                        <button class="mini-filter-chip">500m</button>
+                        <button class="mini-filter-chip">1km</button>
+                        <button class="mini-filter-chip active">3km</button>
+                        <button class="mini-filter-chip">5km</button>
+                    </div>
+                </div>
+
+                <!-- Category Filter -->
+                <div class="mini-filter-group">
+                    <span class="mini-filter-label">カテゴリー</span>
+                    <div class="mini-filter-options">
+                        <button class="mini-category-chip active">
+                            <span class="mini-category-icon">🍽️</span>
+                            <span>レストラン</span>
+                        </button>
+                        <button class="mini-category-chip">
+                            <span class="mini-category-icon">🛍️</span>
+                            <span>ショッピング</span>
+                        </button>
+                        <button class="mini-category-chip">
+                            <span class="mini-category-icon">💄</span>
+                            <span>美容</span>
+                        </button>
+                        <button class="mini-category-chip">
+                            <span class="mini-category-icon">🎮</span>
+                            <span>エンタメ</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sort Options -->
+                <div class="mini-sort-section">
+                    <button class="mini-sort-btn">
+                        <span class="mini-sort-icon">⚡</span>
+                        <span class="font-mplus font-semibold">並び替え</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Grid Layout -->
+    <main class="mini-main">
+        <div class="mini-container">
+            <div class="mini-content-grid">
+                <!-- Map Section -->
+                <section class="mini-map-section">
+                    <div class="mini-section-header">
+                        <h2 class="mini-section-title">マップビュー</h2>
+                        <div class="mini-result-counter">
+                            <span class="mini-result-number">12</span>
+                            <span class="mini-result-label">件</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mini-map-container">
+                        <!-- Geometric Map -->
+                        <div class="mini-map-area">
+                            <!-- Map Pins -->
+                            <div class="mini-map-pin" style="top: 25%; left: 35%;">
+                                <div class="mini-pin-geometric">💄</div>
+                                <div class="mini-pin-tooltip">ビューティーサロン麗</div>
+                            </div>
+                            <div class="mini-map-pin" style="top: 45%; left: 65%;">
+                                <div class="mini-pin-geometric">🍽️</div>
+                                <div class="mini-pin-tooltip">カフェ・ドルチェ</div>
+                            </div>
+                            <div class="mini-map-pin" style="top: 70%; left: 30%;">
+                                <div class="mini-pin-geometric">🛍️</div>
+                                <div class="mini-pin-tooltip">ファッション館NOVA</div>
+                            </div>
+                            <div class="mini-map-pin" style="top: 60%; left: 80%;">
+                                <div class="mini-pin-geometric">🎮</div>
+                                <div class="mini-pin-tooltip">ゲームセンター</div>
+                            </div>
+                            
+                            <!-- Current Location -->
+                            <div class="mini-current-location">
+                                <div class="mini-current-marker"></div>
+                                <span class="mini-current-label">現在地</span>
+                            </div>
+                            
+                            <!-- Geometric Grid Lines -->
+                            <div class="mini-grid-lines">
+                                <div class="mini-grid-line horizontal" style="top: 25%;"></div>
+                                <div class="mini-grid-line horizontal" style="top: 50%;"></div>
+                                <div class="mini-grid-line horizontal" style="top: 75%;"></div>
+                                <div class="mini-grid-line vertical" style="left: 25%;"></div>
+                                <div class="mini-grid-line vertical" style="left: 50%;"></div>
+                                <div class="mini-grid-line vertical" style="left: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Store List Section -->
+                <section class="mini-store-section">
+                    <div class="mini-section-header">
+                        <h2 class="mini-section-title">店舗リスト</h2>
+                        <div class="mini-view-toggle">
+                            <button class="mini-toggle-btn active">リスト</button>
+                            <button class="mini-toggle-btn">カード</button>
+                        </div>
+                    </div>
+                    
+                    <div class="mini-store-list">
+                        <!-- Store Item 1 -->
+                        <div class="mini-store-item">
+                            <div class="mini-store-icon-container">
+                                <div class="mini-store-icon">💄</div>
+                            </div>
+                            <div class="mini-store-content">
+                                <div class="mini-store-header">
+                                    <h3 class="mini-store-name">ビューティーサロン麗</h3>
+                                    <div class="mini-store-status open">営業中</div>
+                                </div>
+                                <p class="mini-store-category">サービス・美容 ¥¥¥</p>
+                                <div class="mini-store-meta">
+                                    <div class="mini-rating">
+                                        <span class="mini-stars">⭐⭐⭐⭐⭐</span>
+                                        <span class="mini-rating-text">4.8 (89件)</span>
+                                    </div>
+                                    <div class="mini-distance">📍 0.6km</div>
+                                </div>
+                                <div class="mini-points-info">
+                                    <span class="mini-points-earn">480pt獲得</span>
+                                    <span class="mini-points-rate">(還元率: 8%)</span>
+                                </div>
+                            </div>
+                            <button class="mini-detail-button">
+                                <span>詳細</span>
+                                <div class="mini-arrow">→</div>
+                            </button>
+                        </div>
+
+                        <!-- Store Item 2 -->
+                        <div class="mini-store-item">
+                            <div class="mini-store-icon-container">
+                                <div class="mini-store-icon">🍽️</div>
+                            </div>
+                            <div class="mini-store-content">
+                                <div class="mini-store-header">
+                                    <h3 class="mini-store-name">カフェ・ドルチェ</h3>
+                                    <div class="mini-store-status open">営業中</div>
+                                </div>
+                                <p class="mini-store-category">レストラン・飲食店 ¥¥</p>
+                                <div class="mini-store-meta">
+                                    <div class="mini-rating">
+                                        <span class="mini-stars">⭐⭐⭐⭐⭐</span>
+                                        <span class="mini-rating-text">4.6 (124件)</span>
+                                    </div>
+                                    <div class="mini-distance">📍 0.8km</div>
+                                </div>
+                                <div class="mini-points-info">
+                                    <span class="mini-points-earn">320pt獲得</span>
+                                    <span class="mini-points-rate">(還元率: 5%)</span>
+                                </div>
+                            </div>
+                            <button class="mini-detail-button">
+                                <span>詳細</span>
+                                <div class="mini-arrow">→</div>
+                            </button>
+                        </div>
+
+                        <!-- Store Item 3 -->
+                        <div class="mini-store-item">
+                            <div class="mini-store-icon-container">
+                                <div class="mini-store-icon">🛍️</div>
+                            </div>
+                            <div class="mini-store-content">
+                                <div class="mini-store-header">
+                                    <h3 class="mini-store-name">ファッション館NOVA</h3>
+                                    <div class="mini-store-status closed">閉店中</div>
+                                </div>
+                                <p class="mini-store-category">小売・ショッピング ¥¥¥</p>
+                                <div class="mini-store-meta">
+                                    <div class="mini-rating">
+                                        <span class="mini-stars">⭐⭐⭐⭐⭐</span>
+                                        <span class="mini-rating-text">4.3 (67件)</span>
+                                    </div>
+                                    <div class="mini-distance">📍 1.2km</div>
+                                </div>
+                                <div class="mini-points-info">
+                                    <span class="mini-points-earn">600pt獲得</span>
+                                    <span class="mini-points-rate">(還元率: 10%)</span>
+                                </div>
+                            </div>
+                            <button class="mini-detail-button">
+                                <span>詳細</span>
+                                <div class="mini-arrow">→</div>
+                            </button>
+                        </div>
+
+                        <!-- Store Item 4 -->
+                        <div class="mini-store-item">
+                            <div class="mini-store-icon-container">
+                                <div class="mini-store-icon">🎮</div>
+                            </div>
+                            <div class="mini-store-content">
+                                <div class="mini-store-header">
+                                    <h3 class="mini-store-name">ゲームセンターFUN</h3>
+                                    <div class="mini-store-status open">営業中</div>
+                                </div>
+                                <p class="mini-store-category">エンターテイメント ¥¥</p>
+                                <div class="mini-store-meta">
+                                    <div class="mini-rating">
+                                        <span class="mini-stars">⭐⭐⭐⭐⭐</span>
+                                        <span class="mini-rating-text">4.5 (156件)</span>
+                                    </div>
+                                    <div class="mini-distance">📍 1.5km</div>
+                                </div>
+                                <div class="mini-points-info">
+                                    <span class="mini-points-earn">240pt獲得</span>
+                                    <span class="mini-points-rate">(還元率: 4%)</span>
+                                </div>
+                            </div>
+                            <button class="mini-detail-button">
+                                <span>詳細</span>
+                                <div class="mini-arrow">→</div>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Geometric Bottom Navigation -->
+    <nav class="mini-bottom-nav">
+        <div class="mini-nav-container">
+            <button class="mini-nav-item active">
+                <div class="mini-nav-icon">🏠</div>
+                <span class="mini-nav-label">ホーム</span>
+                <div class="mini-nav-indicator"></div>
+            </button>
+            <button class="mini-nav-item">
+                <div class="mini-nav-icon">🔍</div>
+                <span class="mini-nav-label">検索</span>
+            </button>
+            <button class="mini-nav-item">
+                <div class="mini-nav-icon">💳</div>
+                <span class="mini-nav-label">ポイント</span>
+            </button>
+            <button class="mini-nav-item">
+                <div class="mini-nav-icon">👤</div>
+                <span class="mini-nav-label">マイページ</span>
+            </button>
+        </div>
+    </nav>
+</body>
+</html>
