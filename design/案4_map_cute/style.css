@@ -1,0 +1,264 @@
+/* Map Cute Style - Custom CSS */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Font Classes */
+.font-pacifico {
+    font-family: 'Pacifico', cursive;
+}
+
+/* Custom Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-soft {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Floating Animation */
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse Animation */
+.pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Shimmer Effect */
+.shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Custom Gradients */
+.bg-cute-gradient {
+    background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #e8f5e8 100%);
+}
+
+.bg-map-gradient {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+}
+
+/* Custom Shadows */
+.shadow-cute {
+    box-shadow: 0 10px 25px rgba(233, 30, 99, 0.15), 0 5px 10px rgba(233, 30, 99, 0.1);
+}
+
+.shadow-soft {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08), 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom Borders */
+.border-cute {
+    border: 3px solid #f8bbd9;
+    border-radius: 20px;
+}
+
+/* Hover Effects */
+.hover-lift {
+    transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(233, 30, 99, 0.2);
+}
+
+/* Button Styles */
+.btn-cute {
+    background: linear-gradient(135deg, #ff6b9d, #c44569);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    color: white;
+    font-weight: 600;
+    text-transform: none;
+    box-shadow: 0 5px 15px rgba(196, 69, 105, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-cute:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(196, 69, 105, 0.4);
+}
+
+/* Card Styles */
+.card-cute {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f8bbd9;
+    transition: all 0.3s ease;
+}
+
+.card-cute:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border-color: #f06292;
+}
+
+/* Map Container Styles */
+#map {
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+}
+
+/* Custom Map Markers */
+.custom-marker {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #ff6b9d, #c44569);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-marker::before {
+    content: '💖';
+    transform: rotate(45deg);
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+    .card-cute {
+        padding: 16px;
+        border-radius: 16px;
+    }
+    
+    .btn-cute {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    #map {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .font-pacifico {
+        font-size: 1.5rem;
+    }
+    
+    .card-cute {
+        padding: 12px;
+        border-radius: 12px;
+    }
+    
+    #map {
+        height: 200px;
+    }
+}
+
+/* Loading Animation */
+.loading-dots {
+    display: inline-block;
+}
+
+.loading-dots::after {
+    content: '';
+    animation: loading-dots 1.5s infinite;
+}
+
+@keyframes loading-dots {
+    0%, 20% { content: ''; }
+    40% { content: '.'; }
+    60% { content: '..'; }
+    80%, 100% { content: '...'; }
+}
+
+/* Cute Icons */
+.icon-cute {
+    background: linear-gradient(135deg, #ff9a9e, #fecfef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Glassmorphism Effect */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Cute Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f8bbd9;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ff6b9d, #c44569);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #c44569, #ff6b9d);
+}
+
+/* Text Gradient */
+.text-gradient {
+    background: linear-gradient(135deg, #ff6b9d, #c44569);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Cute Focus States */
+input:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.3);
+}
+
+/* Custom Radio/Checkbox */
+.cute-radio {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f06292;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+    cursor: pointer;
+}
+
+.cute-radio:checked {
+    background: linear-gradient(135deg, #ff6b9d, #c44569);
+    border-color: #c44569;
+}
+
+.cute-radio:checked::after {
+    content: '💖';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+}

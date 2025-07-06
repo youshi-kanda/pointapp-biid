@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIID Store - Map Cute Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-pink-50 via-white to-purple-50 min-h-screen">
+    
+    <!-- Floating Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-lg border-b-4 border-pink-200">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-lg">B</span>
+                    </div>
+                    <h1 class="text-2xl font-pacifico text-pink-600">biid</h1>
+                </div>
+                
+                <!-- User Info -->
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-2 bg-pink-100 rounded-full px-4 py-2">
+                        <div class="w-8 h-8 bg-pink-300 rounded-full flex items-center justify-center">
+                            <span class="text-pink-700 text-sm font-semibold">田</span>
+                        </div>
+                        <span class="text-pink-700 font-medium">田中太郎さん</span>
+                    </div>
+                    
+                    <!-- Points Display -->
+                    <div class="bg-gradient-to-r from-yellow-300 to-orange-300 rounded-full px-4 py-2 shadow-lg">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-coins text-orange-600"></i>
+                            <span class="font-bold text-orange-700">15,420</span>
+                            <span class="text-orange-600 text-sm">ポイント</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Button -->
+                    <button class="md:hidden bg-pink-200 rounded-full p-2">
+                        <i class="fas fa-bars text-pink-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-20">
+        <!-- Search Section -->
+        <section class="container mx-auto px-4 py-6">
+            <div class="bg-white rounded-3xl shadow-xl border-4 border-pink-100 p-6 mb-6">
+                <h2 class="text-xl font-pacifico text-pink-600 mb-4 text-center">
+                    <i class="fas fa-search mr-2"></i>
+                    近くのお店を探そう！
+                </h2>
+                
+                <!-- Location Search -->
+                <div class="mb-4">
+                    <label class="block text-pink-700 font-medium mb-2">現在地を取得</label>
+                    <button class="w-full bg-gradient-to-r from-pink-400 to-purple-400 text-white rounded-full py-3 px-6 font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-location-arrow mr-2"></i>
+                        現在地を取得
+                    </button>
+                </div>
+                
+                <!-- Distance Filter -->
+                <div class="mb-4">
+                    <label class="block text-pink-700 font-medium mb-2">検索範囲</label>
+                    <div class="grid grid-cols-4 gap-2">
+                        <button class="bg-pink-100 hover:bg-pink-200 text-pink-700 rounded-full py-2 px-3 text-sm font-medium transition-colors">500m</button>
+                        <button class="bg-pink-200 text-pink-700 rounded-full py-2 px-3 text-sm font-medium">1km</button>
+                        <button class="bg-pink-100 hover:bg-pink-200 text-pink-700 rounded-full py-2 px-3 text-sm font-medium transition-colors">3km</button>
+                        <button class="bg-pink-100 hover:bg-pink-200 text-pink-700 rounded-full py-2 px-3 text-sm font-medium transition-colors">5km</button>
+                    </div>
+                </div>
+                
+                <!-- Category Filter -->
+                <div>
+                    <label class="block text-pink-700 font-medium mb-2">カテゴリー</label>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-full py-2 px-4 text-sm font-medium transition-colors">
+                            <i class="fas fa-utensils mr-1"></i>レストラン
+                        </button>
+                        <button class="bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-full py-2 px-4 text-sm font-medium transition-colors">
+                            <i class="fas fa-shopping-bag mr-1"></i>ショッピング
+                        </button>
+                        <button class="bg-green-100 hover:bg-green-200 text-green-700 rounded-full py-2 px-4 text-sm font-medium transition-colors">
+                            <i class="fas fa-coffee mr-1"></i>カフェ
+                        </button>
+                        <button class="bg-yellow-100 hover:bg-yellow-200 text-yellow-700 rounded-full py-2 px-4 text-sm font-medium transition-colors">
+                            <i class="fas fa-gift mr-1"></i>ギフト
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="container mx-auto px-4 mb-6">
+            <div class="bg-white rounded-3xl shadow-xl border-4 border-pink-100 overflow-hidden">
+                <div class="bg-gradient-to-r from-pink-300 to-purple-300 p-4">
+                    <h3 class="text-white font-pacifico text-lg text-center">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        可愛いマップ
+                    </h3>
+                </div>
+                <div id="map" class="h-96 relative">
+                    <!-- Custom styled map will be loaded here -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-100 to-purple-100 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-map text-6xl text-pink-300 mb-4"></i>
+                            <p class="text-pink-600 font-medium">カスタム可愛いマップ</p>
+                            <p class="text-pink-500 text-sm">Google Maps API読み込み中...</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Map Pins Preview -->
+                    <div class="absolute top-4 left-4 bg-white rounded-full p-2 shadow-lg">
+                        <i class="fas fa-heart text-pink-500"></i>
+                    </div>
+                    <div class="absolute top-12 right-8 bg-white rounded-full p-2 shadow-lg">
+                        <i class="fas fa-star text-yellow-500"></i>
+                    </div>
+                    <div class="absolute bottom-8 left-8 bg-white rounded-full p-2 shadow-lg">
+                        <i class="fas fa-coffee text-brown-500"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Store List Section -->
+        <section class="container mx-auto px-4">
+            <div class="bg-white rounded-3xl shadow-xl border-4 border-pink-100 p-6">
+                <h3 class="text-xl font-pacifico text-pink-600 mb-6 text-center">
+                    <i class="fas fa-store mr-2"></i>
+                    おすすめのお店
+                </h3>
+                
+                <!-- Store Cards -->
+                <div class="space-y-4">
+                    <!-- Store 1 -->
+                    <div class="bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-4 border-2 border-pink-200 hover:border-pink-300 transition-all duration-300 hover:shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-cut text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-pink-700 text-lg">ビューティーサロン麗</h4>
+                                    <p class="text-pink-600 text-sm">サービス・美容 ¥¥¥</p>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <div class="flex text-yellow-400">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="text-pink-600 text-sm">4.8 (89件)</span>
+                                        <span class="text-pink-500 text-sm">• 0.6km</span>
+                                    </div>
+                                    <p class="text-pink-700 font-medium mt-1">獲得ポイント: 480pt (還元率: 8%)</p>
+                                </div>
+                            </div>
+                            <button class="bg-gradient-to-r from-pink-400 to-purple-400 text-white rounded-full px-6 py-2 font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                                詳細
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Store 2 -->
+                    <div class="bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-4 border-2 border-blue-200 hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-green-400 rounded-full flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-coffee text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-blue-700 text-lg">カフェ・ドルチェ</h4>
+                                    <p class="text-blue-600 text-sm">レストラン・飲食店 ¥¥</p>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <div class="flex text-yellow-400">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <span class="text-blue-600 text-sm">4.6 (124件)</span>
+                                        <span class="text-blue-500 text-sm">• 0.8km</span>
+                                    </div>
+                                    <p class="text-blue-700 font-medium mt-1">獲得ポイント: 320pt (還元率: 5%)</p>
+                                </div>
+                            </div>
+                            <button class="bg-gradient-to-r from-blue-400 to-green-400 text-white rounded-full px-6 py-2 font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                                詳細
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Store 3 -->
+                    <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-4 border-2 border-purple-200 hover:border-purple-300 transition-all duration-300 hover:shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-shopping-bag text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-purple-700 text-lg">ファッション館NOVA</h4>
+                                    <p class="text-purple-600 text-sm">小売・ショッピング ¥¥¥</p>
+                                    <div class="flex items-center space-x-2 mt-1">
+                                        <div class="flex text-yellow-400">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <span class="text-purple-600 text-sm">4.3 (67件)</span>
+                                        <span class="text-purple-500 text-sm">• 1.2km</span>
+                                    </div>
+                                    <p class="text-purple-700 font-medium mt-1">獲得ポイント: 600pt (還元率: 10%)</p>
+                                </div>
+                            </div>
+                            <button class="bg-gradient-to-r from-purple-400 to-pink-400 text-white rounded-full px-6 py-2 font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                                詳細
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t-4 border-pink-200 shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-around items-center">
+                <button class="flex flex-col items-center space-y-1 text-pink-600">
+                    <i class="fas fa-home text-xl"></i>
+                    <span class="text-xs font-medium">ホーム</span>
+                </button>
+                <button class="flex flex-col items-center space-y-1 text-pink-400">
+                    <i class="fas fa-map text-xl"></i>
+                    <span class="text-xs font-medium">マップ</span>
+                </button>
+                <button class="flex flex-col items-center space-y-1 text-pink-400">
+                    <i class="fas fa-coins text-xl"></i>
+                    <span class="text-xs font-medium">ポイント</span>
+                </button>
+                <button class="flex flex-col items-center space-y-1 text-pink-400">
+                    <i class="fas fa-user text-xl"></i>
+                    <span class="text-xs font-medium">マイページ</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Google Maps Script -->
+    <script>
+        function initMap() {
+            const mapStyles = [
+                {
+                    "elementType": "geometry",
+                    "stylers": [{ "color": "#fdf1f1" }]
+                },
+                {
+                    "elementType": "labels.text.fill",
+                    "stylers": [{ "color": "#ff80ab" }]
+                },
+                {
+                    "elementType": "labels.text.stroke",
+                    "stylers": [{ "color": "#ffffff" }]
+                },
+                {
+                    "featureType": "poi",
+                    "stylers": [{ "color": "#f9e0e0" }]
+                },
+                {
+                    "featureType": "road",
+                    "stylers": [{ "color": "#ffffff" }]
+                },
+                {
+                    "featureType": "water",
+                    "stylers": [{ "color": "#d0f0f8" }]
+                }
+            ];
+
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: { lat: 35.6762, lng: 139.6503 },
+                styles: mapStyles,
+                disableDefaultUI: true,
+                zoomControl: true,
+                mapTypeControl: false,
+                streetViewControl: false,
+                fullscreenControl: false
+            });
+
+            // Add custom markers
+            const markers = [
+                { lat: 35.6762, lng: 139.6503, title: "ビューティーサロン麗", icon: "💄" },
+                { lat: 35.6772, lng: 139.6513, title: "カフェ・ドルチェ", icon: "☕" },
+                { lat: 35.6752, lng: 139.6493, title: "ファッション館NOVA", icon: "👗" }
+            ];
+
+            markers.forEach(markerData => {
+                const marker = new google.maps.Marker({
+                    position: { lat: markerData.lat, lng: markerData.lng },
+                    map: map,
+                    title: markerData.title
+                });
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0sIJoIzT0Z6Bsj3Sw6LEh0_tLixgxMpY&callback=initMap"></script>
+</body>
+</html>
