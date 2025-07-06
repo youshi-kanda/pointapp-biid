@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIID Store - Cafe Girly Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 min-h-screen">
+    
+    <!-- Curved Header with Cafe Theme -->
+    <header class="relative bg-gradient-to-r from-pink-400 via-rose-400 to-purple-400 overflow-hidden">
+        <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+        <div class="relative container mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <!-- Logo with Coffee Cup -->
+                <div class="flex items-center space-x-3">
+                    <div class="relative">
+                        <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg transform rotate-12">
+                            <i class="fas fa-coffee text-pink-500 text-xl"></i>
+                        </div>
+                        <div class="absolute -top-1 -right-1 w-6 h-6 bg-yellow-300 rounded-full flex items-center justify-center">
+                            <span class="text-xs">✨</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-dancing text-white drop-shadow-lg">biid</h1>
+                        <p class="text-white opacity-80 text-sm font-medium">Cafe & Gift Connect</p>
+                    </div>
+                </div>
+                
+                <!-- User Profile Card -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <div class="bg-white/20 backdrop-blur-md rounded-2xl px-4 py-3 border border-white/30">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-gradient-to-br from-pink-300 to-purple-300 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">田</span>
+                            </div>
+                            <div>
+                                <p class="text-white font-medium text-sm">田中太郎さん</p>
+                                <p class="text-white/70 text-xs">ID: MT2345</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Points Latte Cup -->
+                    <div class="relative">
+                        <div class="bg-gradient-to-b from-yellow-200 to-orange-300 rounded-2xl px-6 py-3 shadow-lg border-2 border-white/50">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-coins text-orange-600"></i>
+                                <div>
+                                    <p class="text-orange-800 font-bold text-lg">15,420</p>
+                                    <p class="text-orange-700 text-xs">ポイント</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-red-400 rounded-full flex items-center justify-center">
+                            <span class="text-white text-xs">💝</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu -->
+                <button class="md:hidden bg-white/20 backdrop-blur-md rounded-full p-3 border border-white/30">
+                    <i class="fas fa-bars text-white"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Curved Bottom -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1200 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-8">
+                <path d="M0 120L50 105C100 90 200 60 300 45C400 30 500 30 600 37.5C700 45 800 60 900 67.5C1000 75 1100 75 1150 75L1200 75V120H1150C1100 120 1000 120 900 120C800 120 700 120 600 120C500 120 400 120 300 120C200 120 100 120 50 120H0Z" fill="white"/>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Cafe-Style Search Panel -->
+    <section class="container mx-auto px-4 -mt-4 relative z-10">
+        <div class="bg-white rounded-3xl shadow-2xl border-4 border-pink-100 p-6 mb-8">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-dancing text-pink-600 mb-2">
+                    ☕ 素敵なカフェ＆ギフトを見つけよう ☕
+                </h2>
+                <p class="text-pink-500 text-sm">あなたの好みに合わせてお店を探します</p>
+            </div>
+            
+            <!-- Location with Cute Icons -->
+            <div class="mb-6">
+                <div class="flex items-center justify-center space-x-4 mb-4">
+                    <button class="bg-gradient-to-r from-pink-400 to-rose-400 text-white rounded-full py-3 px-8 font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-2">
+                        <i class="fas fa-location-arrow"></i>
+                        <span>現在地を取得</span>
+                        <span class="text-lg">📍</span>
+                    </button>
+                </div>
+                
+                <!-- Distance Buttons as Coffee Cups -->
+                <div class="grid grid-cols-4 gap-3">
+                    <button class="bg-gradient-to-b from-amber-100 to-amber-200 hover:from-amber-200 hover:to-amber-300 text-amber-800 rounded-2xl py-3 px-2 text-sm font-medium transition-all duration-300 border-2 border-amber-300 relative">
+                        <span class="block">500m</span>
+                        <span class="text-xs opacity-70">☕</span>
+                    </button>
+                    <button class="bg-gradient-to-b from-orange-100 to-orange-200 text-orange-800 rounded-2xl py-3 px-2 text-sm font-medium border-2 border-orange-300 relative">
+                        <span class="block">1km</span>
+                        <span class="text-xs opacity-70">🥐</span>
+                    </button>
+                    <button class="bg-gradient-to-b from-pink-100 to-pink-200 hover:from-pink-200 hover:to-pink-300 text-pink-800 rounded-2xl py-3 px-2 text-sm font-medium transition-all duration-300 border-2 border-pink-300 relative">
+                        <span class="block">3km</span>
+                        <span class="text-xs opacity-70">🧁</span>
+                    </button>
+                    <button class="bg-gradient-to-b from-purple-100 to-purple-200 hover:from-purple-200 hover:to-purple-300 text-purple-800 rounded-2xl py-3 px-2 text-sm font-medium transition-all duration-300 border-2 border-purple-300 relative">
+                        <span class="block">5km</span>
+                        <span class="text-xs opacity-70">🍰</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Category Pills with Emojis -->
+            <div>
+                <label class="block text-pink-700 font-medium mb-3 text-center">カテゴリーを選んでね 💕</label>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button class="bg-gradient-to-r from-red-100 to-pink-100 hover:from-red-200 hover:to-pink-200 text-red-700 rounded-full py-3 px-6 text-sm font-medium transition-all duration-300 border-2 border-red-200 flex items-center space-x-2">
+                        <span>🍽️</span>
+                        <span>レストラン</span>
+                    </button>
+                    <button class="bg-gradient-to-r from-blue-100 to-cyan-100 hover:from-blue-200 hover:to-cyan-200 text-blue-700 rounded-full py-3 px-6 text-sm font-medium transition-all duration-300 border-2 border-blue-200 flex items-center space-x-2">
+                        <span>🛍️</span>
+                        <span>ショッピング</span>
+                    </button>
+                    <button class="bg-gradient-to-r from-amber-100 to-yellow-100 hover:from-amber-200 hover:to-yellow-200 text-amber-700 rounded-full py-3 px-6 text-sm font-medium transition-all duration-300 border-2 border-amber-200 flex items-center space-x-2">
+                        <span>☕</span>
+                        <span>カフェ</span>
+                    </button>
+                    <button class="bg-gradient-to-r from-purple-100 to-pink-100 hover:from-purple-200 hover:to-pink-200 text-purple-700 rounded-full py-3 px-6 text-sm font-medium transition-all duration-300 border-2 border-purple-200 flex items-center space-x-2">
+                        <span>🎁</span>
+                        <span>ギフト</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Styled Map -->
+    <section class="container mx-auto px-4 mb-8">
+        <div class="bg-white rounded-3xl shadow-2xl border-4 border-pink-100 overflow-hidden">
+            <div class="bg-gradient-to-r from-pink-300 via-rose-300 to-purple-300 p-4">
+                <h3 class="text-white font-dancing text-xl text-center flex items-center justify-center space-x-2">
+                    <span>🗺️</span>
+                    <span>可愛いマップでお店探し</span>
+                    <span>💕</span>
+                </h3>
+            </div>
+            <div id="map" class="h-80 relative">
+                <!-- Map Loading State -->
+                <div class="absolute inset-0 bg-gradient-to-br from-pink-50 to-purple-50 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="animate-bounce mb-4">
+                            <i class="fas fa-map-marked-alt text-6xl text-pink-400"></i>
+                        </div>
+                        <p class="text-pink-600 font-medium">可愛いマップを読み込み中...</p>
+                        <div class="flex justify-center space-x-1 mt-2">
+                            <div class="w-2 h-2 bg-pink-400 rounded-full animate-pulse"></div>
+                            <div class="w-2 h-2 bg-rose-400 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
+                            <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cafe-Style Store Cards -->
+    <section class="container mx-auto px-4 pb-24">
+        <div class="bg-white rounded-3xl shadow-2xl border-4 border-pink-100 p-6">
+            <h3 class="text-2xl font-dancing text-pink-600 mb-6 text-center flex items-center justify-center space-x-2">
+                <span>✨</span>
+                <span>おすすめのお店</span>
+                <span>✨</span>
+            </h3>
+            
+            <!-- Store Cards with Cafe Theme -->
+            <div class="space-y-6">
+                <!-- Store 1 - Beauty Salon -->
+                <div class="bg-gradient-to-r from-pink-50 via-rose-50 to-purple-50 rounded-3xl p-6 border-3 border-pink-200 hover:border-pink-300 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="relative">
+                                <div class="w-20 h-20 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-cut text-white text-2xl"></i>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-300 rounded-full flex items-center justify-center border-2 border-white">
+                                    <span class="text-sm">💄</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-dancing text-2xl text-pink-700 mb-1">ビューティーサロン麗</h4>
+                                <p class="text-pink-600 text-sm mb-2">サービス・美容 ¥¥¥</p>
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="text-pink-600 text-sm font-medium">4.8 (89件)</span>
+                                    <span class="text-pink-500 text-sm">📍 0.6km</span>
+                                </div>
+                                <div class="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-full px-4 py-2 inline-block">
+                                    <p class="text-orange-700 font-bold text-sm">💰 獲得ポイント: 480pt (還元率: 8%)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="bg-gradient-to-r from-pink-400 to-purple-400 text-white rounded-full px-8 py-3 font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-2">
+                            <span>詳細</span>
+                            <span>💕</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Store 2 - Cafe -->
+                <div class="bg-gradient-to-r from-amber-50 via-yellow-50 to-orange-50 rounded-3xl p-6 border-3 border-amber-200 hover:border-amber-300 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="relative">
+                                <div class="w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-400 rounded-full flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-coffee text-white text-2xl"></i>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-pink-300 rounded-full flex items-center justify-center border-2 border-white">
+                                    <span class="text-sm">☕</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-dancing text-2xl text-amber-700 mb-1">カフェ・ドルチェ</h4>
+                                <p class="text-amber-600 text-sm mb-2">レストラン・飲食店 ¥¥</p>
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="text-amber-600 text-sm font-medium">4.6 (124件)</span>
+                                    <span class="text-amber-500 text-sm">📍 0.8km</span>
+                                </div>
+                                <div class="bg-gradient-to-r from-green-100 to-emerald-100 rounded-full px-4 py-2 inline-block">
+                                    <p class="text-emerald-700 font-bold text-sm">💰 獲得ポイント: 320pt (還元率: 5%)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="bg-gradient-to-r from-amber-400 to-orange-400 text-white rounded-full px-8 py-3 font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-2">
+                            <span>詳細</span>
+                            <span>☕</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Store 3 - Fashion -->
+                <div class="bg-gradient-to-r from-purple-50 via-indigo-50 to-blue-50 rounded-3xl p-6 border-3 border-purple-200 hover:border-purple-300 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="relative">
+                                <div class="w-20 h-20 bg-gradient-to-br from-purple-400 to-indigo-400 rounded-full flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-shopping-bag text-white text-2xl"></i>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-pink-300 rounded-full flex items-center justify-center border-2 border-white">
+                                    <span class="text-sm">👗</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-dancing text-2xl text-purple-700 mb-1">ファッション館NOVA</h4>
+                                <p class="text-purple-600 text-sm mb-2">小売・ショッピング ¥¥¥</p>
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="text-purple-600 text-sm font-medium">4.3 (67件)</span>
+                                    <span class="text-purple-500 text-sm">📍 1.2km</span>
+                                </div>
+                                <div class="bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full px-4 py-2 inline-block">
+                                    <p class="text-cyan-700 font-bold text-sm">💰 獲得ポイント: 600pt (還元率: 10%)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="bg-gradient-to-r from-purple-400 to-indigo-400 text-white rounded-full px-8 py-3 font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-2">
+                            <span>詳細</span>
+                            <span>🛍️</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t-4 border-pink-200 shadow-2xl">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-around items-center">
+                <button class="flex flex-col items-center space-y-1 text-pink-600 transform hover:scale-110 transition-transform">
+                    <div class="w-12 h-12 bg-gradient-to-br from-pink-400 to-rose-400 rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fas fa-home text-white"></i>
+                    </div>
+                    <span class="text-xs font-medium">ホーム</span>
+                </button>
+                <button class="flex flex-col items-center space-y-1 text-pink-400 transform hover:scale-110 transition-transform">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-map text-pink-400"></i>
+                    </div>
+                    <span class="text-xs font-medium">マップ</span>
+                </button>
+                <button class="flex flex-col items-center space-y-1 text-pink-400 transform hover:scale-110 transition-transform">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-coins text-pink-400"></i>
+                    </div>
+                    <span class="text-xs font-medium">ポイント</span>
+                </button>
+                <button class="flex flex-col items-center space-y-1 text-pink-400 transform hover:scale-110 transition-transform">
+                    <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-pink-400"></i>
+                    </div>
+                    <span class="text-xs font-medium">マイページ</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Google Maps Script -->
+    <script>
+        function initMap() {
+            const mapStyles = [
+                {
+                    "elementType": "geometry",
+                    "stylers": [{ "color": "#fdf1f1" }]
+                },
+                {
+                    "elementType": "labels.text.fill",
+                    "stylers": [{ "color": "#ff80ab" }]
+                },
+                {
+                    "elementType": "labels.text.stroke",
+                    "stylers": [{ "color": "#ffffff" }]
+                },
+                {
+                    "featureType": "poi",
+                    "stylers": [{ "color": "#f9e0e0" }]
+                },
+                {
+                    "featureType": "road",
+                    "stylers": [{ "color": "#ffffff" }]
+                },
+                {
+                    "featureType": "water",
+                    "stylers": [{ "color": "#d0f0f8" }]
+                }
+            ];
+
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: { lat: 35.6762, lng: 139.6503 },
+                styles: mapStyles,
+                disableDefaultUI: true,
+                zoomControl: true,
+                mapTypeControl: false,
+                streetViewControl: false,
+                fullscreenControl: false
+            });
+
+            // Add custom markers with cafe theme
+            const markers = [
+                { lat: 35.6762, lng: 139.6503, title: "ビューティーサロン麗", type: "beauty" },
+                { lat: 35.6772, lng: 139.6513, title: "カフェ・ドルチェ", type: "cafe" },
+                { lat: 35.6752, lng: 139.6493, title: "ファッション館NOVA", type: "fashion" }
+            ];
+
+            markers.forEach(markerData => {
+                const marker = new google.maps.Marker({
+                    position: { lat: markerData.lat, lng: markerData.lng },
+                    map: map,
+                    title: markerData.title
+                });
+
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `<div style="padding: 10px; text-align: center;">
+                        <h3 style="color: #ec4899; font-family: 'Dancing Script', cursive; margin: 0;">${markerData.title}</h3>
+                        <p style="margin: 5px 0; color: #be185d;">💕 可愛いお店です 💕</p>
+                    </div>`
+                });
+
+                marker.addListener('click', () => {
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+
+        // Initialize map when page loads
+        window.onload = function() {
+            if (typeof google !== 'undefined') {
+                initMap();
+            }
+        };
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0sIJoIzT0Z6Bsj3Sw6LEh0_tLixgxMpY&callback=initMap"></script>
+</body>
+</html>

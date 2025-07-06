@@ -1,0 +1,412 @@
+/* Cafe Girly Style - Custom CSS */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Font Classes */
+.font-dancing {
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Custom Animations */
+@keyframes float-gentle {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes bounce-soft {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes shimmer-cafe {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-heart {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg); }
+    75% { transform: rotate(-1deg); }
+}
+
+/* Animation Classes */
+.float-gentle {
+    animation: float-gentle 4s ease-in-out infinite;
+}
+
+.bounce-soft {
+    animation: bounce-soft 2s ease-in-out infinite;
+}
+
+.pulse-heart {
+    animation: pulse-heart 1.5s ease-in-out infinite;
+}
+
+.wiggle {
+    animation: wiggle 2s ease-in-out infinite;
+}
+
+/* Custom Gradients */
+.bg-cafe-gradient {
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 25%, #f48fb1 50%, #f06292 75%, #ec407a 100%);
+}
+
+.bg-latte-gradient {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 25%, #ffcc80 50%, #ffb74d 75%, #ffa726 100%);
+}
+
+.bg-cream-gradient {
+    background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 50%, #eeeeee 100%);
+}
+
+/* Custom Shadows */
+.shadow-cafe {
+    box-shadow: 0 15px 35px rgba(236, 64, 122, 0.2), 0 5px 15px rgba(236, 64, 122, 0.1);
+}
+
+.shadow-latte {
+    box-shadow: 0 10px 25px rgba(255, 167, 38, 0.15), 0 5px 10px rgba(255, 167, 38, 0.1);
+}
+
+.shadow-soft-pink {
+    box-shadow: 0 8px 20px rgba(248, 187, 217, 0.3), 0 3px 8px rgba(248, 187, 217, 0.2);
+}
+
+/* Cafe-themed Borders */
+.border-cafe {
+    border: 3px solid #f8bbd9;
+    border-radius: 25px;
+}
+
+.border-latte {
+    border: 3px solid #ffcc80;
+    border-radius: 20px;
+}
+
+/* Button Styles */
+.btn-cafe {
+    background: linear-gradient(135deg, #ec407a, #ad1457);
+    border: none;
+    border-radius: 30px;
+    padding: 14px 28px;
+    color: white;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 8px 20px rgba(173, 20, 87, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-cafe::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-cafe:hover::before {
+    left: 100%;
+}
+
+.btn-cafe:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(173, 20, 87, 0.4);
+}
+
+.btn-latte {
+    background: linear-gradient(135deg, #ffa726, #f57c00);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 6px 15px rgba(245, 124, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-latte:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 124, 0, 0.4);
+}
+
+/* Card Styles */
+.card-cafe {
+    background: white;
+    border-radius: 25px;
+    padding: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border: 3px solid #f8bbd9;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-cafe::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(248, 187, 217, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-cafe:hover::before {
+    opacity: 1;
+}
+
+.card-cafe:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: #ec407a;
+}
+
+/* Emoji and Icon Styles */
+.emoji-float {
+    display: inline-block;
+    animation: float-gentle 3s ease-in-out infinite;
+}
+
+.emoji-bounce {
+    display: inline-block;
+    animation: bounce-soft 2s ease-in-out infinite;
+}
+
+.emoji-wiggle {
+    display: inline-block;
+    animation: wiggle 2s ease-in-out infinite;
+}
+
+/* Custom Map Styles */
+#map {
+    border-radius: 0 0 25px 25px;
+    overflow: hidden;
+    position: relative;
+}
+
+.map-loading {
+    background: linear-gradient(135deg, #fce4ec, #f8bbd9, #f48fb1);
+    background-size: 400% 400%;
+    animation: shimmer-cafe 3s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+    .card-cafe {
+        padding: 20px;
+        border-radius: 20px;
+    }
+    
+    .btn-cafe {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+    
+    .font-dancing {
+        font-size: 1.8rem;
+    }
+    
+    #map {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .font-dancing {
+        font-size: 1.5rem;
+    }
+    
+    .card-cafe {
+        padding: 16px;
+        border-radius: 16px;
+    }
+    
+    .btn-cafe {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    #map {
+        height: 200px;
+    }
+}
+
+/* Cute Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ec407a, #ad1457);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ad1457, #ec407a);
+}
+
+/* Text Effects */
+.text-cafe-gradient {
+    background: linear-gradient(135deg, #ec407a, #ad1457);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-latte-gradient {
+    background: linear-gradient(135deg, #ffa726, #f57c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Focus States */
+input:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(236, 64, 122, 0.3);
+}
+
+/* Loading Animation */
+.loading-cafe {
+    display: inline-block;
+}
+
+.loading-cafe::after {
+    content: '';
+    animation: loading-cafe 2s infinite;
+}
+
+@keyframes loading-cafe {
+    0%, 20% { content: '☕'; }
+    40% { content: '☕.'; }
+    60% { content: '☕..'; }
+    80%, 100% { content: '☕...'; }
+}
+
+/* Glassmorphism Effect */
+.glass-cafe {
+    background: rgba(252, 228, 236, 0.3);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(248, 187, 217, 0.2);
+}
+
+/* Hover Effects for Store Cards */
+.store-card {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.store-card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.store-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.store-card:hover::after {
+    opacity: 1;
+}
+
+/* Navigation Button Effects */
+.nav-btn {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+}
+
+.nav-btn.active {
+    transform: scale(1.1);
+}
+
+/* Custom Radio Buttons */
+.cafe-radio {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #ec407a;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cafe-radio:checked {
+    background: linear-gradient(135deg, #ec407a, #ad1457);
+    border-color: #ad1457;
+}
+
+.cafe-radio:checked::after {
+    content: '💕';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+}
+
+/* Cute Checkbox */
+.cafe-checkbox {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #ec407a;
+    border-radius: 6px;
+    background: white;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cafe-checkbox:checked {
+    background: linear-gradient(135deg, #ec407a, #ad1457);
+    border-color: #ad1457;
+}
+
+.cafe-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
