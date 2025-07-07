@@ -207,7 +207,7 @@ const UserThemePage: React.FC = () => {
                   style={{ border: 0 }}
                   width="100%"
                   height="300"
-                  frameBorder={0}
+                  frameBorder="0"
                   scrolling="no"
                   title="日本の祝日カレンダー"
                 />
