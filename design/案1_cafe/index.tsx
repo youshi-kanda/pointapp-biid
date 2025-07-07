@@ -3,17 +3,17 @@ const CafeDesign = () => {
     <div style={{
       fontFamily: '"Dancing Script", "Noto Sans JP", sans-serif',
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #f5f1eb 0%, #ede0d3 50%, #e6d3c1 100%)',
-      color: '#5d4037'
+      background: 'linear-gradient(135deg, #fdf2f8 0%, #f3e8ff 50%, #fce7f3 100%)',
+      color: '#be185d'
     }}>
       <header style={{
-        background: 'linear-gradient(135deg, #8d6e63 0%, #6d4c41 100%)',
+        background: 'linear-gradient(135deg, #f8bbd9 0%, #e91e63 100%)',
         color: 'white',
         padding: '15px 20px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        boxShadow: '0 4px 15px rgba(141, 110, 99, 0.3)',
+        boxShadow: '0 4px 15px rgba(236, 72, 153, 0.3)',
         position: 'sticky',
         top: 0,
         zIndex: 100
@@ -50,7 +50,7 @@ const CafeDesign = () => {
         
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <span style={{ fontSize: '24px' }}>☕</span>
-          <span style={{ fontFamily: '"Dancing Script"', fontSize: '24px', fontWeight: 'bold' }}>biid StoreConnect</span>
+          <span style={{ fontFamily: '"Dancing Script"', fontSize: '24px', fontWeight: 'bold' }}>💕 biid StoreConnect</span>
         </div>
         
         <nav style={{ display: 'flex', gap: '20px' }}>
@@ -223,7 +223,7 @@ const CafeDesign = () => {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     <button style={{
                       padding: '8px 16px',
-                      background: 'linear-gradient(135deg, #a1887f 0%, #8d6e63 100%)',
+                      background: 'linear-gradient(135deg, #ec4899 0%, #be185d 100%)',
                       color: 'white',
                       border: 'none',
                       borderRadius: '20px',

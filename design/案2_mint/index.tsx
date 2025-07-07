@@ -1,10 +1,10 @@
 const MintDesign = () => {
   return (
     <div style={{
-      fontFamily: '"Quicksand", "Noto Sans JP", sans-serif',
+      fontFamily: '"Baloo 2", "Poppins", sans-serif',
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 50%, #a7f3d0 100%)',
-      color: '#064e3b'
+      background: 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 50%, #ffffff 100%)',
+      color: '#065f46'
     }}>
       <header style={{
         background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
@@ -50,7 +50,7 @@ const MintDesign = () => {
         
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <span style={{ fontSize: '24px' }}>🌿</span>
-          <span style={{ fontFamily: '"Quicksand"', fontSize: '24px', fontWeight: 'bold' }}>biid StoreConnect</span>
+          <span style={{ fontFamily: '"Baloo 2"', fontSize: '24px', fontWeight: 'bold' }}>🌟 biid StoreConnect</span>
         </div>
         
         <nav style={{ display: 'flex', gap: '20px' }}>

@@ -1,10 +1,10 @@
 const LavenderDesign = () => {
   return (
     <div style={{
-      fontFamily: '"Playfair Display", "Noto Sans JP", serif',
+      fontFamily: '"Pacifico", "Open Sans", sans-serif',
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #faf5ff 0%, #f3e8ff 50%, #e9d5ff 100%)',
-      color: '#581c87'
+      background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%)',
+      color: '#1e293b'
     }}>
       <header style={{
         background: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
@@ -50,7 +50,7 @@ const LavenderDesign = () => {
         
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <span style={{ fontSize: '24px' }}>💜</span>
-          <span style={{ fontFamily: '"Playfair Display"', fontSize: '24px', fontWeight: 'bold', fontStyle: 'italic' }}>biid StoreConnect</span>
+          <span style={{ fontFamily: '"Pacifico"', fontSize: '24px', fontWeight: 'bold' }}>✨ biid StoreConnect</span>
         </div>
         
         <nav style={{ display: 'flex', gap: '20px' }}>
