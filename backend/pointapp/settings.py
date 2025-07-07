@@ -95,7 +95,11 @@ REST_FRAMEWORK = {
     ],
 }
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://pointapp-uiwebsite-tunnel-e3ak4ljy.devinapps.com",
+    "https://pointapp-uiwebsite-tunnel-l7pqcthq.devinapps.com",
+    "http://localhost:3000",
+]
 CORS_ALLOW_CREDENTIALS = True
 
 JWT_SECRET_KEY = config('JWT_SECRET_KEY', default='your-jwt-secret-here')
