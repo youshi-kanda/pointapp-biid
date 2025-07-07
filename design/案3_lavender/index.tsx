@@ -1,22 +1,23 @@
 const LavenderDesign = () => {
   return (
     <div style={{
-      fontFamily: '"Pacifico", "Open Sans", sans-serif',
+      fontFamily: '"Fredoka One", "Inter", sans-serif',
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%)',
-      color: '#1e293b'
+      background: 'linear-gradient(135deg, #faf5ff 0%, #f3e8ff 25%, #e9d5ff 50%, #fef3c7 75%, #fde68a 100%)',
+      color: '#581c87'
     }}>
       <header style={{
-        background: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
+        background: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #f59e0b 100%)',
         color: 'white',
-        padding: '15px 20px',
+        padding: '18px 25px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        boxShadow: '0 4px 15px rgba(139, 92, 246, 0.3)',
+        boxShadow: '0 8px 32px rgba(139, 92, 246, 0.4), 0 4px 16px rgba(245, 158, 11, 0.3)',
         position: 'sticky',
         top: 0,
-        zIndex: 100
+        zIndex: 100,
+        borderBottom: '3px solid rgba(255, 255, 255, 0.3)'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
           <div style={{
@@ -50,7 +51,7 @@ const LavenderDesign = () => {
         
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <span style={{ fontSize: '24px' }}>💜</span>
-          <span style={{ fontFamily: '"Pacifico"', fontSize: '24px', fontWeight: 'bold' }}>✨ biid StoreConnect</span>
+          <span style={{ fontFamily: '"Fredoka One"', fontSize: '26px', fontWeight: '600', textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>💜🌟 biid StoreConnect 🌟💜</span>
         </div>
         
         <nav style={{ display: 'flex', gap: '20px' }}>

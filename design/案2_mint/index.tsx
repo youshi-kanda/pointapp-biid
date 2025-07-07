@@ -1,22 +1,23 @@
 const MintDesign = () => {
   return (
     <div style={{
-      fontFamily: '"Baloo 2", "Poppins", sans-serif',
+      fontFamily: '"Nunito", "Poppins", sans-serif',
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 50%, #ffffff 100%)',
-      color: '#065f46'
+      background: 'linear-gradient(135deg, #f0fff4 0%, #dcfce7 25%, #bbf7d0 50%, #fef3c7 75%, #fde68a 100%)',
+      color: '#064e3b'
     }}>
       <header style={{
-        background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+        background: 'linear-gradient(135deg, #10b981 0%, #059669 50%, #f59e0b 100%)',
         color: 'white',
-        padding: '15px 20px',
+        padding: '18px 25px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        boxShadow: '0 4px 15px rgba(16, 185, 129, 0.3)',
+        boxShadow: '0 8px 32px rgba(16, 185, 129, 0.4), 0 4px 16px rgba(245, 158, 11, 0.3)',
         position: 'sticky',
         top: 0,
-        zIndex: 100
+        zIndex: 100,
+        borderBottom: '3px solid rgba(255, 255, 255, 0.3)'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
           <div style={{
@@ -50,7 +51,7 @@ const MintDesign = () => {
         
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <span style={{ fontSize: '24px' }}>🌿</span>
-          <span style={{ fontFamily: '"Baloo 2"', fontSize: '24px', fontWeight: 'bold' }}>🌟 biid StoreConnect</span>
+          <span style={{ fontFamily: '"Nunito"', fontSize: '26px', fontWeight: '800', textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>🍃💫 biid StoreConnect 💫🍃</span>
         </div>
         
         <nav style={{ display: 'flex', gap: '20px' }}>

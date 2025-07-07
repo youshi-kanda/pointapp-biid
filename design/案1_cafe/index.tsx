@@ -1,22 +1,23 @@
 const CafeDesign = () => {
   return (
     <div style={{
-      fontFamily: '"Dancing Script", "Noto Sans JP", sans-serif',
+      fontFamily: '"Quicksand", "Comfortaa", sans-serif',
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #fdf2f8 0%, #f3e8ff 50%, #fce7f3 100%)',
-      color: '#be185d'
+      background: 'linear-gradient(135deg, #fff1f2 0%, #fef7ff 25%, #fdf4ff 50%, #fef3c7 75%, #fef9c3 100%)',
+      color: '#831843'
     }}>
       <header style={{
-        background: 'linear-gradient(135deg, #f8bbd9 0%, #e91e63 100%)',
+        background: 'linear-gradient(135deg, #ec4899 0%, #be185d 50%, #f59e0b 100%)',
         color: 'white',
-        padding: '15px 20px',
+        padding: '18px 25px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        boxShadow: '0 4px 15px rgba(236, 72, 153, 0.3)',
+        boxShadow: '0 8px 32px rgba(236, 72, 153, 0.3), 0 4px 16px rgba(245, 158, 11, 0.2)',
         position: 'sticky',
         top: 0,
-        zIndex: 100
+        zIndex: 100,
+        borderBottom: '3px solid rgba(255, 255, 255, 0.3)'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
           <div style={{
@@ -50,7 +51,7 @@ const CafeDesign = () => {
         
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <span style={{ fontSize: '24px' }}>☕</span>
-          <span style={{ fontFamily: '"Dancing Script"', fontSize: '24px', fontWeight: 'bold' }}>💕 biid StoreConnect</span>
+          <span style={{ fontFamily: '"Quicksand"', fontSize: '26px', fontWeight: '700', textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>🌸✨ biid StoreConnect ✨🌸</span>
         </div>
         
         <nav style={{ display: 'flex', gap: '20px' }}>
