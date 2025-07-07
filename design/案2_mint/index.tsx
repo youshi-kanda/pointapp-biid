@@ -3,21 +3,21 @@ const MintDesign = () => {
     <div style={{
       fontFamily: '"Nunito", "Poppins", sans-serif',
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #f0fff4 0%, #dcfce7 25%, #bbf7d0 50%, #fef3c7 75%, #fde68a 100%)',
+      background: '#fafafa',
       color: '#064e3b'
     }}>
       <header style={{
-        background: 'linear-gradient(135deg, #10b981 0%, #059669 50%, #f59e0b 100%)',
-        color: 'white',
+        background: 'white',
+        color: '#10b981',
         padding: '18px 25px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        boxShadow: '0 8px 32px rgba(16, 185, 129, 0.4), 0 4px 16px rgba(245, 158, 11, 0.3)',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
         position: 'sticky',
         top: 0,
         zIndex: 100,
-        borderBottom: '3px solid rgba(255, 255, 255, 0.3)'
+        borderBottom: '3px solid #10b981'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
           <div style={{
@@ -65,10 +65,12 @@ const MintDesign = () => {
       <div style={{ display: 'flex', minHeight: 'calc(100vh - 80px)' }}>
         <aside style={{
           width: '300px',
-          background: 'rgba(255, 255, 255, 0.9)',
-          backdropFilter: 'blur(10px)',
+          background: 'white',
           padding: '20px',
-          boxShadow: '4px 0 15px rgba(16, 185, 129, 0.1)',
+          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
+          border: '2px solid rgba(16, 185, 129, 0.2)',
+          borderRadius: '20px',
+          margin: '20px',
           position: 'sticky',
           top: '80px',
           height: 'calc(100vh - 80px)',
@@ -165,7 +167,7 @@ const MintDesign = () => {
         </aside>
 
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-          <section style={{ padding: '20px', background: 'white', margin: '20px', borderRadius: '20px', boxShadow: '0 8px 25px rgba(16, 185, 129, 0.1)', border: '1px solid #6ee7b7' }}>
+          <section style={{ padding: '20px', background: 'white', margin: '20px', borderRadius: '20px', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)', border: '2px solid rgba(16, 185, 129, 0.2)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
               <h2 style={{ fontFamily: '"Quicksand"', fontSize: '28px', color: '#059669', fontWeight: 'bold' }}>🌿 近くのbiid加盟店</h2>
               <span style={{ background: '#6ee7b7', color: 'white', padding: '5px 15px', borderRadius: '15px', fontWeight: 'bold' }}>12件</span>
@@ -189,7 +191,7 @@ const MintDesign = () => {
             </div>
           </section>
 
-          <section style={{ padding: '20px', background: 'white', margin: '0 20px 20px', borderRadius: '20px', boxShadow: '0 8px 25px rgba(16, 185, 129, 0.1)', border: '1px solid #6ee7b7' }}>
+          <section style={{ padding: '20px', background: 'white', margin: '0 20px 20px', borderRadius: '20px', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)', border: '2px solid rgba(16, 185, 129, 0.2)' }}>
             <h2 style={{ fontFamily: '"Quicksand"', fontSize: '28px', color: '#059669', marginBottom: '20px', fontWeight: 'bold' }}>🌿 店舗一覧</h2>
             
             <div style={{ display: 'grid', gap: '15px' }}>
@@ -203,12 +205,13 @@ const MintDesign = () => {
                   alignItems: 'center',
                   gap: '15px',
                   padding: '15px',
-                  background: 'linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%)',
-                  borderRadius: '15px',
-                  boxShadow: '0 4px 15px rgba(16, 185, 129, 0.2)',
+                  background: 'white',
+                  borderRadius: '20px',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)',
+                  border: '2px solid rgba(16, 185, 129, 0.15)',
+                  borderLeft: '5px solid #10b981',
                   transition: 'transform 0.2s',
-                  cursor: 'pointer',
-                  border: '1px solid #34d399'
+                  cursor: 'pointer'
                 }}>
                   <div style={{ fontSize: '40px' }}>{store.icon}</div>
                   <div style={{ flex: 1 }}>

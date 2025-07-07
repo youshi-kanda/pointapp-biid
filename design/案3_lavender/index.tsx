@@ -3,21 +3,21 @@ const LavenderDesign = () => {
     <div style={{
       fontFamily: '"Fredoka One", "Inter", sans-serif',
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #faf5ff 0%, #f3e8ff 25%, #e9d5ff 50%, #fef3c7 75%, #fde68a 100%)',
+      background: '#fafafa',
       color: '#581c87'
     }}>
       <header style={{
-        background: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #f59e0b 100%)',
-        color: 'white',
+        background: 'white',
+        color: '#8b5cf6',
         padding: '18px 25px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        boxShadow: '0 8px 32px rgba(139, 92, 246, 0.4), 0 4px 16px rgba(245, 158, 11, 0.3)',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
         position: 'sticky',
         top: 0,
         zIndex: 100,
-        borderBottom: '3px solid rgba(255, 255, 255, 0.3)'
+        borderBottom: '3px solid #8b5cf6'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
           <div style={{
@@ -65,15 +65,16 @@ const LavenderDesign = () => {
       <div style={{ display: 'flex', minHeight: 'calc(100vh - 80px)' }}>
         <aside style={{
           width: '300px',
-          background: 'rgba(255, 255, 255, 0.9)',
-          backdropFilter: 'blur(10px)',
+          background: 'white',
           padding: '20px',
-          boxShadow: '4px 0 15px rgba(139, 92, 246, 0.1)',
+          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
+          border: '2px solid rgba(139, 92, 246, 0.2)',
+          borderRadius: '12px',
+          margin: '20px',
           position: 'sticky',
           top: '80px',
           height: 'calc(100vh - 80px)',
-          overflowY: 'auto',
-          borderRight: '2px solid #c4b5fd'
+          overflowY: 'auto'
         }}>
           <h3 style={{ fontFamily: '"Playfair Display"', fontSize: '24px', marginBottom: '20px', color: '#7c3aed', fontWeight: 'bold', fontStyle: 'italic' }}>🔍 検索条件</h3>
           
@@ -168,7 +169,7 @@ const LavenderDesign = () => {
         </aside>
 
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-          <section style={{ padding: '20px', background: 'white', margin: '20px', borderRadius: '20px', boxShadow: '0 8px 25px rgba(139, 92, 246, 0.1)', border: '2px solid #c4b5fd' }}>
+          <section style={{ padding: '20px', background: 'white', margin: '20px', borderRadius: '12px', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)', border: '2px solid rgba(139, 92, 246, 0.2)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
               <h2 style={{ fontFamily: '"Playfair Display"', fontSize: '28px', color: '#7c3aed', fontWeight: 'bold', fontStyle: 'italic' }}>💜 近くのbiid加盟店</h2>
               <span style={{ background: '#c4b5fd', color: 'white', padding: '5px 15px', borderRadius: '15px', fontWeight: 'bold' }}>12件</span>
@@ -192,7 +193,7 @@ const LavenderDesign = () => {
             </div>
           </section>
 
-          <section style={{ padding: '20px', background: 'white', margin: '0 20px 20px', borderRadius: '20px', boxShadow: '0 8px 25px rgba(139, 92, 246, 0.1)', border: '2px solid #c4b5fd' }}>
+          <section style={{ padding: '20px', background: 'white', margin: '0 20px 20px', borderRadius: '12px', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)', border: '2px solid rgba(139, 92, 246, 0.2)' }}>
             <h2 style={{ fontFamily: '"Playfair Display"', fontSize: '28px', color: '#7c3aed', marginBottom: '20px', fontWeight: 'bold', fontStyle: 'italic' }}>💜 店舗一覧</h2>
             
             <div style={{ display: 'grid', gap: '15px' }}>
@@ -206,12 +207,13 @@ const LavenderDesign = () => {
                   alignItems: 'center',
                   gap: '15px',
                   padding: '15px',
-                  background: 'linear-gradient(135deg, #e9d5ff 0%, #c4b5fd 100%)',
-                  borderRadius: '15px',
-                  boxShadow: '0 4px 15px rgba(139, 92, 246, 0.2)',
+                  background: 'white',
+                  borderRadius: '12px',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)',
+                  border: '2px solid rgba(139, 92, 246, 0.15)',
+                  borderLeft: '5px solid #8b5cf6',
                   transition: 'transform 0.2s',
-                  cursor: 'pointer',
-                  border: '2px solid #a78bfa'
+                  cursor: 'pointer'
                 }}>
                   <div style={{ fontSize: '40px' }}>{store.icon}</div>
                   <div style={{ flex: 1 }}>

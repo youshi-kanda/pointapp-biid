@@ -3,21 +3,21 @@ const CafeDesign = () => {
     <div style={{
       fontFamily: '"Quicksand", "Comfortaa", sans-serif',
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #fff1f2 0%, #fef7ff 25%, #fdf4ff 50%, #fef3c7 75%, #fef9c3 100%)',
+      background: '#fafafa',
       color: '#831843'
     }}>
       <header style={{
-        background: 'linear-gradient(135deg, #ec4899 0%, #be185d 50%, #f59e0b 100%)',
-        color: 'white',
+        background: 'white',
+        color: '#be185d',
         padding: '18px 25px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        boxShadow: '0 8px 32px rgba(236, 72, 153, 0.3), 0 4px 16px rgba(245, 158, 11, 0.2)',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
         position: 'sticky',
         top: 0,
         zIndex: 100,
-        borderBottom: '3px solid rgba(255, 255, 255, 0.3)'
+        borderBottom: '3px solid #ec4899'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
           <div style={{
@@ -51,7 +51,7 @@ const CafeDesign = () => {
         
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <span style={{ fontSize: '24px' }}>☕</span>
-          <span style={{ fontFamily: '"Quicksand"', fontSize: '26px', fontWeight: '700', textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>🌸✨ biid StoreConnect ✨🌸</span>
+          <span style={{ fontFamily: '"Quicksand"', fontSize: '24px', fontWeight: '700', color: '#be185d' }}>🌸 biid StoreConnect</span>
         </div>
         
         <nav style={{ display: 'flex', gap: '20px' }}>
@@ -65,10 +65,12 @@ const CafeDesign = () => {
       <div style={{ display: 'flex', minHeight: 'calc(100vh - 80px)' }}>
         <aside style={{
           width: '300px',
-          background: 'rgba(255, 255, 255, 0.9)',
-          backdropFilter: 'blur(10px)',
+          background: 'white',
           padding: '20px',
-          boxShadow: '4px 0 15px rgba(141, 110, 99, 0.1)',
+          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
+          border: '2px solid rgba(236, 72, 153, 0.2)',
+          borderRadius: '15px',
+          margin: '20px',
           position: 'sticky',
           top: '80px',
           height: 'calc(100vh - 80px)',
@@ -164,7 +166,7 @@ const CafeDesign = () => {
         </aside>
 
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-          <section style={{ padding: '20px', background: 'white', margin: '20px', borderRadius: '20px', boxShadow: '0 8px 25px rgba(141, 110, 99, 0.1)' }}>
+          <section style={{ padding: '20px', background: 'white', margin: '20px', borderRadius: '15px', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)', border: '2px solid rgba(236, 72, 153, 0.2)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
               <h2 style={{ fontFamily: '"Dancing Script"', fontSize: '28px', color: '#6d4c41' }}>☕ 近くのbiid加盟店</h2>
               <span style={{ background: '#d7ccc8', padding: '5px 15px', borderRadius: '15px', fontWeight: 'bold' }}>12件</span>
@@ -188,7 +190,7 @@ const CafeDesign = () => {
             </div>
           </section>
 
-          <section style={{ padding: '20px', background: 'white', margin: '0 20px 20px', borderRadius: '20px', boxShadow: '0 8px 25px rgba(141, 110, 99, 0.1)' }}>
+          <section style={{ padding: '20px', background: 'white', margin: '0 20px 20px', borderRadius: '15px', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)', border: '2px solid rgba(236, 72, 153, 0.2)' }}>
             <h2 style={{ fontFamily: '"Dancing Script"', fontSize: '28px', color: '#6d4c41', marginBottom: '20px' }}>☕ 店舗一覧</h2>
             
             <div style={{ display: 'grid', gap: '15px' }}>
@@ -202,9 +204,11 @@ const CafeDesign = () => {
                   alignItems: 'center',
                   gap: '15px',
                   padding: '15px',
-                  background: 'linear-gradient(135deg, #d7ccc8 0%, #bcaaa4 100%)',
+                  background: 'white',
                   borderRadius: '15px',
-                  boxShadow: '0 4px 15px rgba(141, 110, 99, 0.2)',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)',
+                  border: '2px solid rgba(236, 72, 153, 0.15)',
+                  borderLeft: '5px solid #ec4899',
                   transition: 'transform 0.2s',
                   cursor: 'pointer'
                 }}>
