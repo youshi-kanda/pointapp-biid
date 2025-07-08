@@ -96,7 +96,8 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    'https://extending-guys-chess-prescribed.trycloudflare.com',
+    'https://mar-too-quotations-weeks.trycloudflare.com',
+    'https://grey-sunglasses-anniversary-prostores.trycloudflare.com',
     'http://localhost:3000',
 ]
 CORS_ALLOW_CREDENTIALS = True
