@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { 
   MapPin, 
   Search, 
@@ -16,6 +17,11 @@ import {
   LogOut
 } from 'lucide-react';
 
+const LeafletMap = dynamic(() => import('../components/LeafletMap'), {
+  ssr: false,
+  loading: () => <div className="flex items-center justify-center h-full">地図を読み込み中...</div>
+});
+
 interface Store {
   id: number;
   name: string;
@@ -29,7 +35,7 @@ interface Store {
   status: 'open' | 'closed' | 'closing_soon';
   phone?: string;
   website?: string;
-  position: { x: number; y: number };
+  position: { lat: number; lng: number };
 }
 
 const MockMap: React.FC = () => {
@@ -56,7 +62,7 @@ const MockMap: React.FC = () => {
       pointsRate: 8,
       status: 'open',
       phone: '03-1234-5678',
-      position: { x: 65, y: 45 }
+      position: { lat: 35.6895, lng: 139.6917 }
     },
     {
       id: 2,
@@ -69,7 +75,7 @@ const MockMap: React.FC = () => {
       points: 320,
       pointsRate: 5,
       status: 'open',
-      position: { x: 45, y: 35 }
+      position: { lat: 35.6904, lng: 139.7006 }
     },
     {
       id: 3,
@@ -82,7 +88,7 @@ const MockMap: React.FC = () => {
       points: 250,
       pointsRate: 4,
       status: 'closing_soon',
-      position: { x: 55, y: 25 }
+      position: { lat: 35.6938, lng: 139.7036 }
     },
     {
       id: 4,
@@ -95,7 +101,7 @@ const MockMap: React.FC = () => {
       points: 180,
       pointsRate: 3,
       status: 'open',
-      position: { x: 35, y: 55 }
+      position: { lat: 35.6580, lng: 139.7016 }
     },
     {
       id: 5,
@@ -108,7 +114,7 @@ const MockMap: React.FC = () => {
       points: 400,
       pointsRate: 6,
       status: 'open',
-      position: { x: 75, y: 35 }
+      position: { lat: 35.6762, lng: 139.6503 }
     }
   ];
 
@@ -180,8 +186,8 @@ const MockMap: React.FC = () => {
 
       {/* Main content */}
       <main className="p-6">
-        <div className="flex flex-col lg:flex-row gap-6 h-[calc(100vh-200px)]"></div>
-        {/* Left Sidebar - Search & Filters */}
+        <div className="flex flex-col lg:flex-row gap-6 h-[calc(100vh-200px)]">
+          {/* Left Sidebar - Search & Filters */}
         <div className="w-full lg:w-80 space-y-4">
           {/* Search Bar */}
           <div className="card-cute">
@@ -282,94 +288,14 @@ const MockMap: React.FC = () => {
               <span className="text-sm text-primary-600 font-semibold">{filteredStores.length}件</span>
             </div>
             
-            {/* Mock Map Background */}
-            <div className="relative w-full h-full bg-gradient-to-br from-blue-100 via-green-50 to-blue-50 rounded-2xl overflow-hidden">
-              {/* Map Grid Pattern */}
-              <div className="absolute inset-0 opacity-20">
-                <div className="grid grid-cols-8 grid-rows-6 h-full w-full">
-                  {Array.from({ length: 48 }).map((_, i) => (
-                    <div key={i} className="border border-gray-300"></div>
-                  ))}
-                </div>
-              </div>
-              
-              {/* Streets */}
-              <div className="absolute top-1/3 left-0 right-0 h-2 bg-gray-300 opacity-60"></div>
-              <div className="absolute top-2/3 left-0 right-0 h-1 bg-gray-300 opacity-40"></div>
-              <div className="absolute left-1/4 top-0 bottom-0 w-1 bg-gray-300 opacity-40"></div>
-              <div className="absolute left-3/4 top-0 bottom-0 w-2 bg-gray-300 opacity-60"></div>
-              
-              {/* Parks/Green Areas */}
-              <div className="absolute top-1/4 right-1/4 w-16 h-12 bg-green-200 rounded-lg opacity-70"></div>
-              <div className="absolute bottom-1/4 left-1/3 w-12 h-8 bg-green-200 rounded-lg opacity-70"></div>
-              
-              {/* Store Markers */}
-              {filteredStores.map((store) => (
-                <div
-                  key={store.id}
-                  className="absolute transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
-                  style={{ left: `${store.position.x}%`, top: `${store.position.y}%` }}
-                  onClick={() => setSelectedStore(store)}
-                >
-                  <div className="relative">
-                    <div className="w-8 h-8 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full flex items-center justify-center shadow-cute hover:shadow-pop transform hover:scale-110 transition-all duration-200">
-                      <MapPin className="w-4 h-4 text-white" />
-                    </div>
-                    {selectedStore?.id === store.id && (
-                      <div className="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white rounded-2xl shadow-pop p-4 min-w-64 z-10">
-                        <div className="flex items-start justify-between mb-2">
-                          <h4 className="font-bold text-gray-800">{store.name}</h4>
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setSelectedStore(null);
-                            }}
-                            className="text-gray-400 hover:text-gray-600"
-                          >
-                            ×
-                          </button>
-                        </div>
-                        <p className="text-sm text-gray-600 mb-2">{store.category}</p>
-                        <div className="flex items-center space-x-2 mb-2">
-                          <div className="flex items-center">
-                            <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                            <span className="text-sm font-medium ml-1">{store.rating}</span>
-                          </div>
-                          <span className="text-sm text-gray-500">({store.reviews})</span>
-                          <span className={`text-sm font-medium ${getStatusColor(store.status)}`}>
-                            {getStatusText(store.status)}
-                          </span>
-                        </div>
-                        <p className="text-sm text-gray-600 mb-3">{store.address}</p>
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm text-primary-600 font-semibold">
-                            獲得ポイント: {store.points}pt (還元率: {store.pointsRate}%)
-                          </span>
-                          <button className="btn-primary text-xs px-3 py-1">
-                            地図で確認
-                          </button>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ))}
-              
-              {/* Current Location */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-4 h-4 bg-blue-500 rounded-full border-2 border-white shadow-lg animate-pulse"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-blue-500 rounded-full opacity-30 animate-ping"></div>
-              </div>
-              
-              {/* Zoom Controls */}
-              <div className="absolute bottom-4 right-4 flex flex-col space-y-2">
-                <button className="w-10 h-10 bg-white rounded-lg shadow-cute flex items-center justify-center hover:shadow-pop transition-all duration-200">
-                  <span className="text-lg font-bold text-gray-600">+</span>
-                </button>
-                <button className="w-10 h-10 bg-white rounded-lg shadow-cute flex items-center justify-center hover:shadow-pop transition-all duration-200">
-                  <span className="text-lg font-bold text-gray-600">−</span>
-                </button>
-              </div>
+            <div className="relative w-full h-full">
+              {typeof window !== 'undefined' && (
+                <LeafletMap
+                  stores={filteredStores}
+                  onStoreSelect={setSelectedStore}
+                  selectedStore={selectedStore}
+                />
+              )}
             </div>
           </div>
 
@@ -444,6 +370,7 @@ const MockMap: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
       </main>
     </div>
   );
