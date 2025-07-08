@@ -17,7 +17,7 @@ import {
   LogOut
 } from 'lucide-react';
 
-const LeafletMap = dynamic(() => import('../components/LeafletMap'), {
+const GoogleMapComponent = dynamic(() => import('../components/GoogleMap'), {
   ssr: false,
   loading: () => <div className="flex items-center justify-center h-full">地図を読み込み中...</div>
 });
@@ -289,13 +289,11 @@ const MockMap: React.FC = () => {
             </div>
             
             <div className="relative w-full h-full">
-              {typeof window !== 'undefined' && (
-                <LeafletMap
-                  stores={filteredStores}
-                  onStoreSelect={setSelectedStore}
-                  selectedStore={selectedStore}
-                />
-              )}
+              <GoogleMapComponent
+                stores={filteredStores}
+                onStoreSelect={setSelectedStore}
+                selectedStore={selectedStore}
+              />
             </div>
           </div>
 
