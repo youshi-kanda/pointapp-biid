@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   MapPin, 
   Search, 
@@ -37,6 +37,11 @@ const MockMap: React.FC = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedStore, setSelectedStore] = useState<Store | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<string>('');
+
+  useEffect(() => {
+    setLastUpdated(new Date().toLocaleString('ja-JP'));
+  }, []);
 
   const mockStores: Store[] = [
     {
@@ -167,7 +172,7 @@ const MockMap: React.FC = () => {
             </div>
             <h2 className="text-2xl font-bold gradient-text">近くのbiid加盟店</h2>
             <div className="text-sm text-gray-500">
-              最終更新: {new Date().toLocaleString('ja-JP')}
+              最終更新: {lastUpdated || '読み込み中...'}
             </div>
           </div>
         </div>
