@@ -97,7 +97,7 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [
     'https://paxil-fraction-pipeline-gen.trycloudflare.com',
-    'https://spy-bulgarian-broadcast-respondents.trycloudflare.com',
+    'https://fine-coat-apt-travesti.trycloudflare.com',
     'http://localhost:3000',
 ]
 CORS_ALLOW_CREDENTIALS = True
